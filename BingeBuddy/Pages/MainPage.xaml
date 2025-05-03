@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodels="clr-namespace:BingeBuddy.ViewModels"
+    x:Class="BingeBuddy.MainPage"
+    Title="BingeBuddy">
+
+	<ContentPage.BindingContext>
+		<viewmodels:MovieViewModel />
+	</ContentPage.BindingContext>
+
+	<VerticalStackLayout Padding="20">
+		<Label Text="Your Movie List" FontSize="24" HorizontalOptions="Center" />
+
+		<Entry Placeholder="Enter movie title"
+               Text="{Binding NewMovieTitle}" />
+
+		<Button Text="Add Movie"
+                Clicked="OnAddMovieClicked" />
+
+		<CollectionView ItemsSource="{Binding Movies}">
+			<CollectionView.ItemTemplate>
+				<DataTemplate>
+					<SwipeView>
+						<SwipeView.RightItems>
+							<SwipeItems>
+								<SwipeItem Text="Delete"
+                                           BackgroundColor="Red"
+                                           Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:MovieViewModel}}, Path=RemoveMovie}"
+                                           CommandParameter="{Binding .}" />
+							</SwipeItems>
+						</SwipeView.RightItems>
+
+						<Grid Padding="10">
+							<Label Text="{Binding Title}"
+                                   FontSize="18"
+                                   TextDecorations="{Binding Watched, Converter={StaticResource BoolToTextDecorationConverter}}" />
+							<CheckBox IsChecked="{Binding Watched}" HorizontalOptions="End" />
+						</Grid>
+					</SwipeView>
+				</DataTemplate>
+			</CollectionView.ItemTemplate>
+		</CollectionView>
+	</VerticalStackLayout>
+</ContentPage>

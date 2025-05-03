@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BingeBuddy.Pages.LoginPage"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <VerticalStackLayout Padding="20" Spacing="20">
+            <!-- Header Section -->
+            <Grid BackgroundColor="#2C3E50" HeightRequest="150">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <ImageButton Source="back_icon.png" 
+                             HorizontalOptions="Start" 
+                             VerticalOptions="Center" 
+                             Margin="10" />
+                <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label Text="BingeBuddy" 
+                           FontSize="36" 
+                           FontAttributes="Bold" 
+                           TextColor="White" />
+                    <Image Source="BingeBuddy.Images.Logo.png" 
+                           HeightRequest="100" 
+                           HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </Grid>
+
+            <!-- Login Form -->
+            <Label Text="Sign in to Continue" 
+                   FontSize="18" 
+                   HorizontalOptions="Center" 
+                   TextColor="Black" />
+            <Entry Placeholder="Username" 
+                   BackgroundColor="#E0E0E0" 
+                   HeightRequest="50" 
+                   FontSize="16" />
+            <Entry Placeholder="Password" 
+                   IsPassword="True" 
+                   BackgroundColor="#E0E0E0" 
+                   HeightRequest="50" 
+                   FontSize="16" />
+            <Button Text="Log in" 
+                    BackgroundColor="#2C3E50" 
+                    TextColor="White" 
+                    HeightRequest="50" 
+                    FontSize="16"
+                    Clicked="OnLoginButtonClicked" />
+
+            <!-- Footer Links -->
+            <VerticalStackLayout HorizontalOptions="Center">
+                <Label Text="Forgot Password?" 
+                       FontSize="14" 
+                       TextColor="Gray" />
+                <Label Text="New to BingeBuddy? Sign Up" 
+                       FontSize="14" 
+                       TextColor="Gray" />
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ContentPage.Content>
+</ContentPage>
