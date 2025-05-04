@@ -10,7 +10,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                <ImageButton Source="back_icon.png" 
+                <ImageButton Source="backbutton.png" 
                              HorizontalOptions="Start" 
                              VerticalOptions="Center" 
                              Margin="10" />
@@ -19,7 +19,7 @@
                            FontSize="36" 
                            FontAttributes="Bold" 
                            TextColor="White" />
-                    <Image Source="BingeBuddy.Images.Logo.png" 
+                    <Image Source="logo.png" 
                            HeightRequest="100" 
                            HorizontalOptions="Center" />
                 </VerticalStackLayout>

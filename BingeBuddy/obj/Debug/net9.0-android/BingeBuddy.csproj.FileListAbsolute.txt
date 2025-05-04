@@ -27,6 +27,8 @@ E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-android\m
 E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-android\resizetizer\f\FluentUI.cs
 E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-android\resizetizer\f\OpenSans-Regular.ttf
 E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-android\resizetizer\f\OpenSans-Semibold.ttf
+E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable\backbutton.png
+E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable\logo.png
 E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-xxxhdpi\dotnet_bot.png
 E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-xxhdpi\dotnet_bot.png
 E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-xhdpi\dotnet_bot.png
@@ -124,6 +126,7 @@ E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-android\B
 E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-android\BingeBuddy.AssemblyInfoInputs.cache
 E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-android\BingeBuddy.AssemblyInfo.cs
 E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-android\BingeBuddy.csproj.CoreCompileInputs.cache
+E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-android\BingeBuddy.sourcelink.json
 E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-android\XamlC.stamp
 E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-android\BingeBuddy.dll
 E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-android\BingeBuddy.pdb

@@ -1,7 +1,7 @@
 ﻿using Microsoft.Maui.Controls;
-using BingeBuddy.ViewModels; // Updated namespace
+using BingeBuddy.ViewModels;
 
-namespace BingeBuddy; // Updated namespace
+namespace BingeBuddy;
 
 public partial class MainPage : ContentPage
 {
@@ -10,6 +10,7 @@ public partial class MainPage : ContentPage
     public MainPage()
     {
         InitializeComponent();
+        BindingContext = new MovieViewModel(); // Ensures ViewModel is set in code-behind
     }
 
     private void OnAddMovieClicked(object sender, EventArgs e)
