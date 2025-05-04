@@ -60,15 +60,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiImage Remove="Resources\Images\default_avatar.png" />
-	  <MauiImage Remove="Resources\Images\icon_bookmark.png" />
-	  <MauiImage Remove="Resources\Images\icon_comment.png" />
-	  <MauiImage Remove="Resources\Images\icon_home.png" />
-	  <MauiImage Remove="Resources\Images\icon_like.png" />
-	  <MauiImage Remove="Resources\Images\icon_more.png" />
-	  <MauiImage Remove="Resources\Images\icon_profile.png" />
-	  <MauiImage Remove="Resources\Images\icon_search.png" />
-	  <MauiImage Remove="Resources\Images\Logo.png" />
+	  <None Remove="Resources\Images\default_avatar.png" />
+	  <None Remove="Resources\Images\icon_bookmark.png" />
+	  <None Remove="Resources\Images\icon_comment.png" />
+	  <None Remove="Resources\Images\icon_home.png" />
+	  <None Remove="Resources\Images\icon_like.png" />
+	  <None Remove="Resources\Images\icon_more.png" />
+	  <None Remove="Resources\Images\icon_profile.png" />
+	  <None Remove="Resources\Images\icon_search.png" />
+	  <None Remove="Resources\Images\logo.png" />
 	</ItemGroup>
 
 	<ItemGroup>
