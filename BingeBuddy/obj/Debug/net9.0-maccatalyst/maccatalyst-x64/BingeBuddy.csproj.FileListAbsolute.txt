@@ -1,3 +1,45 @@
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\BingeBuddy.csproj.AssemblyReference.cache
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\mauiimage.inputs
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\mauifont.inputs
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\mauisplash.inputs
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\mauisplash.stamp
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appiconItunesArtwork.png
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon83.5x83.5@2x.png
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon76x76@2x.png
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon60x60@3x.png
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon60x60@2x.png
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon40x40@3x.png
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon40x40@2x.png
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon29x29@3x.png
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon29x29@2x.png
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon20x20@3x.png
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon20x20@2x.png
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\Contents.json
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\dotnet_bot@3x.png
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\dotnet_bot@2x.png
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\dotnet_bot.png
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\mauiimage.stamp
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\mauiimage.outputs
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\mauifont.stamp
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\actool\_PartialAppManifest.items
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\actool\_BundleResourceWithLogicalName.items
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\actool\_ProcessedImageAssetsPath.items
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\ibtool\_ProcessedInterfaceDefinitionsPath.items
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\copySceneKitAssets\_ProcessedSceneKitAssetsPath.items
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\collada\_ProcessedColladaAssetsPath.items
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\atlas\_ProcessedTextureAtlasesPath.items
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\coremlc\_PartialAppManifest.items
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\coremlc\_BundleResourceWithLogicalName.items
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\_ProcessedBundleResourcesPath.items
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\_ProcessedContentPath.items
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\BingeBuddy.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\BingeBuddy.AssemblyInfoInputs.cache
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\BingeBuddy.AssemblyInfo.cs
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\BingeBuddy.csproj.CoreCompileInputs.cache
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\BingeBuddy.sourcelink.json
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\BingeBuddy.dll
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\refint\BingeBuddy.dll
+C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\BingeBuddy.pdb
 E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\BingeBuddy.runtimeconfig.json
 E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\BingeBuddy.dll
 E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\BingeBuddy.pdb
@@ -288,6 +330,7 @@ E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccataly
 E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\BingeBuddy.AssemblyInfoInputs.cache
 E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\BingeBuddy.AssemblyInfo.cs
 E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\BingeBuddy.csproj.CoreCompileInputs.cache
+E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\BingeBuddy.sourcelink.json
 E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\XamlC.stamp
 E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\BingeBuddy.csproj.Up2Date
 E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\BingeBuddy.dll
@@ -295,45 +338,3 @@ E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccataly
 E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\BingeBuddy.pdb
 E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\BingeBuddy.genruntimeconfig.cache
 E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\ref\BingeBuddy.dll
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\BingeBuddy.csproj.AssemblyReference.cache
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\mauiimage.inputs
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\mauifont.inputs
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\mauisplash.inputs
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\mauisplash.stamp
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appiconItunesArtwork.png
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon83.5x83.5@2x.png
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon76x76@2x.png
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon60x60@3x.png
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon60x60@2x.png
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon40x40@3x.png
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon40x40@2x.png
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon29x29@3x.png
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon29x29@2x.png
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon20x20@3x.png
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon20x20@2x.png
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\Contents.json
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\dotnet_bot@3x.png
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\dotnet_bot@2x.png
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\dotnet_bot.png
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\mauiimage.stamp
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\mauiimage.outputs
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\mauifont.stamp
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\actool\_PartialAppManifest.items
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\actool\_BundleResourceWithLogicalName.items
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\actool\_ProcessedImageAssetsPath.items
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\ibtool\_ProcessedInterfaceDefinitionsPath.items
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\copySceneKitAssets\_ProcessedSceneKitAssetsPath.items
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\collada\_ProcessedColladaAssetsPath.items
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\atlas\_ProcessedTextureAtlasesPath.items
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\coremlc\_PartialAppManifest.items
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\coremlc\_BundleResourceWithLogicalName.items
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\_ProcessedBundleResourcesPath.items
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\_ProcessedContentPath.items
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\BingeBuddy.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\BingeBuddy.AssemblyInfoInputs.cache
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\BingeBuddy.AssemblyInfo.cs
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\BingeBuddy.csproj.CoreCompileInputs.cache
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\BingeBuddy.sourcelink.json
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\BingeBuddy.dll
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\refint\BingeBuddy.dll
-C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\BingeBuddy.pdb
