@@ -51,9 +51,11 @@
                 <Label Text="Forgot Password?" 
                        FontSize="14" 
                        TextColor="Gray" />
-                <Label Text="New to BingeBuddy? Sign Up" 
-                       FontSize="14" 
-                       TextColor="Gray" />
+                <Button Text="New to BingeBuddy? Sign Up" 
+                        FontSize="14" 
+                        TextColor="Gray" 
+                        BackgroundColor="Transparent" 
+                        Clicked="OnSignUpButtonClicked" />
             </VerticalStackLayout>
         </VerticalStackLayout>
     </ContentPage.Content>
