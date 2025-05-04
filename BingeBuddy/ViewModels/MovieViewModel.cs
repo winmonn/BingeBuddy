@@ -7,28 +7,49 @@ namespace BingeBuddy.ViewModels
 {
     public class MovieViewModel : INotifyPropertyChanged
     {
-        public ObservableCollection<Movie> Movies { get; set; } = new();
-        private string newMovieTitle;
+        public ObservableCollection<Movie> MoviesInProgress { get; set; } = new();
+        public ObservableCollection<Movie> UpcomingMovies { get; set; } = new();
+
+        private string newMovieTitle = string.Empty; // Default value
         public string NewMovieTitle
         {
             get => newMovieTitle;
             set { newMovieTitle = value; OnPropertyChanged(); }
         }
 
+        private string newMovieDescription = string.Empty; // Default value
+        public string NewMovieDescription
+        {
+            get => newMovieDescription;
+            set { newMovieDescription = value; OnPropertyChanged(); }
+        }
+
+        private string newMovieCategory = "Progress"; // Default value
+        public string NewMovieCategory
+        {
+            get => newMovieCategory;
+            set { newMovieCategory = value; OnPropertyChanged(); }
+        }
+
         public void AddMovie()
         {
             if (!string.IsNullOrWhiteSpace(NewMovieTitle))
             {
-                Movies.Add(new Movie { Title = NewMovieTitle, Watched = false });
+                MoviesInProgress.Add(new Movie
+                {
+                    Title = NewMovieTitle,
+                    Description = NewMovieDescription,
+                    Category = NewMovieCategory,
+                });
                 NewMovieTitle = string.Empty;
+                NewMovieDescription = string.Empty;
             }
         }
 
-        public void RemoveMovie(Movie movie) => Movies.Remove(movie);
-        public void ToggleWatched(Movie movie) => movie.Watched = !movie.Watched;
-
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string name = null)
-            => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
     }
 }

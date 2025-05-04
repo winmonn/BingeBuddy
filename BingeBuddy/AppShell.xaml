@@ -3,13 +3,40 @@
     x:Class="BingeBuddy.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:BingeBuddy"
-    Shell.FlyoutBehavior="Flyout"
+    xmlns:local="clr-namespace:BingeBuddy.Pages"
+    Shell.FlyoutBehavior="Disabled" 
     Title="BingeBuddy">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <TabBar>
+        <!-- Home Page -->
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate local:HomePage}"
+            Route="HomePage" />
+
+        <!-- Notifications Page -->
+        <ShellContent
+            Title="Notifications"
+            ContentTemplate="{DataTemplate local:NotificationsPage}"
+            Route="NotificationsPage" />
+
+        <!-- Profile Page -->
+        <ShellContent
+            Title="Profile"
+            ContentTemplate="{DataTemplate local:ProfilePage}"
+            Route="ProfilePage" />
+
+        <!-- Settings Page -->
+        <ShellContent
+            Title="Settings"
+            ContentTemplate="{DataTemplate local:SettingsPage}"
+            Route="SettingsPage" />
+
+        <!-- Add Movie Page -->
+        <ShellContent
+            Title="Add Movie"
+            ContentTemplate="{DataTemplate local:AddMoviePage}"
+            Route="AddMoviePage" />
+    </TabBar>
 
 </Shell>
