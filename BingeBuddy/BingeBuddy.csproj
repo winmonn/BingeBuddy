@@ -60,6 +60,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiImage Remove="Resources\Images\default_avatar.png" />
+	  <MauiImage Remove="Resources\Images\icon_bookmark.png" />
+	  <MauiImage Remove="Resources\Images\icon_comment.png" />
+	  <MauiImage Remove="Resources\Images\icon_home.png" />
+	  <MauiImage Remove="Resources\Images\icon_like.png" />
+	  <MauiImage Remove="Resources\Images\icon_more.png" />
+	  <MauiImage Remove="Resources\Images\icon_profile.png" />
+	  <MauiImage Remove="Resources\Images\icon_search.png" />
+	  <MauiImage Remove="Resources\Images\Logo.png" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
 	</ItemGroup>

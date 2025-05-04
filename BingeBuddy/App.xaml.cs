@@ -1,4 +1,4 @@
-﻿using BingeBuddy.Pages; // Add this namespace if LoginPage is defined in the Pages folder
+﻿using BingeBuddy.Pages; // Add this namespace if ProfilePage is defined in the Pages folder
 
 namespace BingeBuddy
 {
@@ -11,8 +11,8 @@ namespace BingeBuddy
 
         protected override Window CreateWindow(IActivationState activationState)
         {
-            // Wrap LoginPage in NavigationPage to enable navigation
-            return new Window(new NavigationPage(new LoginPage()));
+            // Wrap ProfilePage in NavigationPage to enable navigation
+            return new Window(new NavigationPage(new ProfilePage()));
         }
     }
 }
