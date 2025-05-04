@@ -15,5 +15,11 @@ namespace BingeBuddy.Pages
             // Navigate to MainPage
             await Navigation.PushAsync(new MainPage());
         }
+
+        private async void OnSignUpButtonClicked(object sender, EventArgs e)
+        {
+            // Navigate to the RegistrationPage
+            await Navigation.PushAsync(new RegistrationPage());
+        }
     }
 }
