@@ -1,4 +1,4 @@
-// File: BingeBuddy/Pages/LoginPage.xaml.cs
+using BingeBuddy.Pages; // Make sure this matches your namespace
 using Microsoft.Maui.Controls;
 
 namespace BingeBuddy.Pages
@@ -10,9 +10,10 @@ namespace BingeBuddy.Pages
             InitializeComponent();
         }
 
-        private void OnLoginButtonClicked(object sender, EventArgs e)
+        private async void OnLoginButtonClicked(object sender, EventArgs e)
         {
-            // Add your login logic here
+            // Navigate to MainPage
+            await Navigation.PushAsync(new MainPage());
         }
     }
 }
