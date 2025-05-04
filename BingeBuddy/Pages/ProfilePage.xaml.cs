@@ -13,7 +13,6 @@ namespace BingeBuddy.Pages
         {
             InitializeComponent();
 
-            // Initialize the in-memory post list
             UserPosts = new ObservableCollection<string>
             {
                 "STAYED UP ALL NIGHT WATCHING SQUID GAME 2 WITH THE KIDS!!!"
