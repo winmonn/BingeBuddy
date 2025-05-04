@@ -8,7 +8,7 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BingeBuddy
-build_property.ProjectDir = E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\
+build_property.ProjectDir = C:\Users\HP\Source\Repos\BingeBuddy\BingeBuddy\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.CsWinRTAotOptimizerEnabled = true
@@ -22,37 +22,43 @@ build_property.CsWinRTUseWindowsUIXamlProjections = false
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[E:/USC/2ND YEAR/2ND SEM/Mob Dev/BingeBuddy/BingeBuddy/App.xaml]
+[C:/Users/HP/Source/Repos/BingeBuddy/BingeBuddy/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = BingeBuddy.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[E:/USC/2ND YEAR/2ND SEM/Mob Dev/BingeBuddy/BingeBuddy/AppShell.xaml]
+[C:/Users/HP/Source/Repos/BingeBuddy/BingeBuddy/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = BingeBuddy.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[E:/USC/2ND YEAR/2ND SEM/Mob Dev/BingeBuddy/BingeBuddy/Pages/LoginPage.xaml]
+[C:/Users/HP/Source/Repos/BingeBuddy/BingeBuddy/Pages/LoginPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = BingeBuddy.Pages.LoginPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\LoginPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\LoginPage.xaml
 
-[E:/USC/2ND YEAR/2ND SEM/Mob Dev/BingeBuddy/BingeBuddy/Pages/MainPage.xaml]
+[C:/Users/HP/Source/Repos/BingeBuddy/BingeBuddy/Pages/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = BingeBuddy.Pages.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\MainPage.xaml
 
-[E:/USC/2ND YEAR/2ND SEM/Mob Dev/BingeBuddy/BingeBuddy/Resources/Styles/Colors.xaml]
+[C:/Users/HP/Source/Repos/BingeBuddy/BingeBuddy/Pages/ProfilePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = BingeBuddy.Pages.ProfilePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\ProfilePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\ProfilePage.xaml
+
+[C:/Users/HP/Source/Repos/BingeBuddy/BingeBuddy/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = BingeBuddy.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
-[E:/USC/2ND YEAR/2ND SEM/Mob Dev/BingeBuddy/BingeBuddy/Resources/Styles/Styles.xaml]
+[C:/Users/HP/Source/Repos/BingeBuddy/BingeBuddy/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = BingeBuddy.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
