@@ -6,6 +6,12 @@ namespace BingeBuddy.Pages
         {
             InitializeComponent();
         }
+
+        // When the Profile button is clicked, navigate to the ProfilePage
+        private async void OnProfileButtonClicked(object sender, EventArgs e)
+        {
+            // Navigate to the ProfilePage using Navigation.PushAsync
+            await Navigation.PushAsync(new ProfilePage());
+        }
     }
 }
-

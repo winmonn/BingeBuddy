@@ -10,7 +10,7 @@
     <ContentPage.BindingContext>
         <viewmodels:MovieViewModel />
     </ContentPage.BindingContext>
-    
+
     <ContentPage.Content>
         <VerticalStackLayout Spacing="10" Padding="10">
             <Grid BackgroundColor="#2C3E50" Padding="10" HeightRequest="60">
@@ -51,7 +51,7 @@
                                             <ColumnDefinition Width="100" />
                                             <ColumnDefinition Width="*" />
                                         </Grid.ColumnDefinitions>
-                                        
+
                                         <Image Source="{Binding Thumbnail}" Grid.Column="0" HeightRequest="100" WidthRequest="80" Aspect="AspectFill" />
                                         <StackLayout Grid.Column="1" Spacing="5">
                                             <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="16" TextColor="White" />
