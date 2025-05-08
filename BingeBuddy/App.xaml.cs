@@ -1,4 +1,4 @@
-﻿using BingeBuddy.Pages; // Add this namespace if LoginPage is defined in the Pages folder
+﻿using BingeBuddy.Pages;
 
 namespace BingeBuddy
 {
@@ -7,12 +7,15 @@ namespace BingeBuddy
         public App()
         {
             InitializeComponent();
+
+            // Start with the LoginPage
+            MainPage = new NavigationPage(new LoginPage());
         }
 
-        protected override Window CreateWindow(IActivationState activationState)
+        public static void NavigateToHomePage()
         {
-            // Wrap LoginPage in NavigationPage to enable navigation
-            return new Window(new NavigationPage(new LoginPage()));
+            // Switch to AppShell with the navigation bar
+            Current.MainPage = new AppShell();
         }
     }
 }
