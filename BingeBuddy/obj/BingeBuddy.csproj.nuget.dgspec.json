@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\RyanSo\\GitHub\\BingeBuddy\\BingeBuddy\\BingeBuddy.csproj": {}
+    "E:\\USC\\2ND YEAR\\2ND SEM\\Mob Dev\\BingeBuddy\\BingeBuddy\\BingeBuddy.csproj": {}
   },
   "projects": {
-    "C:\\Users\\RyanSo\\GitHub\\BingeBuddy\\BingeBuddy\\BingeBuddy.csproj": {
+    "E:\\USC\\2ND YEAR\\2ND SEM\\Mob Dev\\BingeBuddy\\BingeBuddy\\BingeBuddy.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\RyanSo\\GitHub\\BingeBuddy\\BingeBuddy\\BingeBuddy.csproj",
+        "projectUniqueName": "E:\\USC\\2ND YEAR\\2ND SEM\\Mob Dev\\BingeBuddy\\BingeBuddy\\BingeBuddy.csproj",
         "projectName": "BingeBuddy",
-        "projectPath": "C:\\Users\\RyanSo\\GitHub\\BingeBuddy\\BingeBuddy\\BingeBuddy.csproj",
-        "packagesPath": "C:\\Users\\RyanSo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\RyanSo\\GitHub\\BingeBuddy\\BingeBuddy\\obj\\",
+        "projectPath": "E:\\USC\\2ND YEAR\\2ND SEM\\Mob Dev\\BingeBuddy\\BingeBuddy\\BingeBuddy.csproj",
+        "packagesPath": "C:\\Users\\Winmon\\.nuget\\packages\\",
+        "outputPath": "E:\\USC\\2ND YEAR\\2ND SEM\\Mob Dev\\BingeBuddy\\BingeBuddy\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\RyanSo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Winmon\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
