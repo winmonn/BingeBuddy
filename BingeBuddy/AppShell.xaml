@@ -5,38 +5,49 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:BingeBuddy.Pages"
     Shell.FlyoutBehavior="Disabled" 
-    Title="BingeBuddy">
+    Title="BingeBuddy"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarBackgroundColor="#1F2A38"
+    Shell.TabBarForegroundColor="White"
+    Shell.TabBarUnselectedColor="Gray"
+    Shell.TabBarTitleColor="White">
 
     <TabBar>
         <!-- Home Page -->
         <ShellContent
-            Title="Home"
-            ContentTemplate="{DataTemplate local:HomePage}"
-            Route="HomePage" />
-
-        <!-- Notifications Page -->
-        <ShellContent
-            Title="Notifications"
-            ContentTemplate="{DataTemplate local:NotificationsPage}"
-            Route="NotificationsPage" />
-
-        <!-- Profile Page -->
-        <ShellContent
-            Title="Profile"
-            ContentTemplate="{DataTemplate local:ProfilePage}"
-            Route="ProfilePage" />
-
-        <!-- Settings Page -->
-        <ShellContent
-            Title="Settings"
-            ContentTemplate="{DataTemplate local:SettingsPage}"
-            Route="SettingsPage" />
+        Title="Home"
+        Icon="home.svg"
+        ContentTemplate="{DataTemplate local:HomePage}"
+        Route="HomePage" />
 
         <!-- Add Movie Page -->
         <ShellContent
-            Title="Add Movie"
-            ContentTemplate="{DataTemplate local:AddMoviePage}"
-            Route="AddMoviePage" />
+        Title="Browse"
+        Icon="movie.svg"
+        ContentTemplate="{DataTemplate local:AddMoviePage}"
+        Route="AddMoviePage" />
+
+        <!-- Profile Page -->
+        <ShellContent
+        Title="Profile"
+        Icon="profile.svg"
+        ContentTemplate="{DataTemplate local:ProfilePage}"
+        Route="ProfilePage" />
+
+        <!-- Settings Page -->
+        <ShellContent
+        Title="Settings"
+        Icon="settings.svg"
+        ContentTemplate="{DataTemplate local:SettingsPage}"
+        Route="SettingsPage" />
+
+        <!-- Notifications Page -->
+        <ShellContent
+        Title="Notifications"
+        Icon="notification.svg"
+        ContentTemplate="{DataTemplate local:NotificationsPage}"
+        Route="NotificationsPage" />
+
     </TabBar>
 
 </Shell>
