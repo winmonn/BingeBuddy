@@ -10,5 +10,10 @@ namespace BingeBuddy.Pages
             InitializeComponent();
             BindingContext = new MovieViewModel();
         }
+        private void OnFilterClicked(object sender, EventArgs e)
+        {
+            if (BindingContext is MovieViewModel vm)
+                vm.IsGenrePickerVisible = !vm.IsGenrePickerVisible;
+        }
     }
 }

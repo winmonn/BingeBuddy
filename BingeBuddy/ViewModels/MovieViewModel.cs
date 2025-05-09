@@ -11,7 +11,32 @@ namespace BingeBuddy.ViewModels
         public ObservableCollection<Movie> MoviesInProgress { get; set; } = new();
         public ObservableCollection<Movie> UpcomingMovies { get; set; } = new();
 
-        // Add these for search/filter support
+        // genre filter option
+        private bool isGenrePickerVisible;
+        public bool IsGenrePickerVisible
+        {
+            get => isGenrePickerVisible;
+            set { isGenrePickerVisible = value; OnPropertyChanged(); }
+        }
+
+        public ObservableCollection<string> Genres { get; set; } = new();
+        private string selectedGenre;
+        public string SelectedGenre
+        {
+            get => selectedGenre;
+            set
+            {
+                if (selectedGenre != value)
+                {
+                    selectedGenre = value;
+                    OnPropertyChanged();
+                    FilterMovies();
+                }
+            }
+        }
+
+
+        // search filter support
         private string searchText = string.Empty;
         public string SearchText
         {
@@ -128,24 +153,108 @@ namespace BingeBuddy.ViewModels
                 "Progress",
                 false
             ));
+            MoviesInProgress.Add(new Movie(
+                "Avatar: The Last Airbender",
+                "placeholder_movie_poster.jpg",
+                "A young boy must master all four elements to save the world.",
+                "Animation",
+                "Progress",
+                false
+            ));
+            MoviesInProgress.Add(new Movie(
+                "House of Cards",
+                "placeholder_movie_poster.jpg",
+                "A ruthless politician will stop at nothing to conquer Washington, D.C.",
+                "Drama",
+                "Progress",
+                false
+            ));
+            MoviesInProgress.Add(new Movie(
+                "Lost",
+                "placeholder_movie_poster.jpg",
+                "Survivors of a plane crash struggle to survive on a mysterious island.",
+                "Adventure",
+                "Progress",
+                false
+            ));
+            MoviesInProgress.Add(new Movie(
+                "The Office",
+                "placeholder_movie_poster.jpg",
+                "A mockumentary on a group of typical office workers.",
+                "Comedy",
+                "Progress",
+                false
+            ));
+            MoviesInProgress.Add(new Movie(
+                "Peaky Blinders",
+                "placeholder_movie_poster.jpg",
+                "A gangster family epic set in 1900s England.",
+                "Crime",
+                "Progress",
+                false
+            ));
+            MoviesInProgress.Add(new Movie(
+                "Black Mirror",
+                "placeholder_movie_poster.jpg",
+                "An anthology series exploring a twisted, high-tech world.",
+                "Sci-Fi",
+                "Progress",
+                false
+            ));
+            MoviesInProgress.Add(new Movie(
+                "Narcos",
+                "placeholder_movie_poster.jpg",
+                "A chronicled look at the criminal exploits of Colombian drug lord Pablo Escobar.",
+                "Crime",
+                "Progress",
+                false
+            ));
+            MoviesInProgress.Add(new Movie(
+                "Vikings",
+                "placeholder_movie_poster.jpg",
+                "The adventures of Ragnar Lothbrok, the greatest hero of his age.",
+                "Action",
+                "Progress",
+                false
+            ));
+            MoviesInProgress.Add(new Movie(
+                "Brooklyn Nine-Nine",
+                "placeholder_movie_poster.jpg",
+                "Comedy series following the exploits of a Brooklyn police precinct.",
+                "Comedy",
+                "Progress",
+                false
+            ));
+            MoviesInProgress.Add(new Movie(
+                "Chernobyl",
+                "placeholder_movie_poster.jpg",
+                "A dramatization of the true story of the Chernobyl nuclear disaster.",
+                "Drama",
+                "Progress",
+                false
+            ));
 
             // Initialize FilteredMovies with all movies
             FilteredMovies = new ObservableCollection<Movie>(MoviesInProgress);
+            // filter genre
+            Genres = new ObservableCollection<string>(
+                MoviesInProgress.Select(m => m.Genre).Distinct().OrderBy(g => g)
+            );
+            Genres.Insert(0, "All");
+            SelectedGenre = "All";
         }
 
         private void FilterMovies()
         {
-            if (string.IsNullOrWhiteSpace(SearchText))
-            {
-                FilteredMovies = new ObservableCollection<Movie>(MoviesInProgress);
-            }
-            else
-            {
-                var filtered = MoviesInProgress
-                    .Where(m => m.Title.Contains(SearchText, System.StringComparison.OrdinalIgnoreCase))
-                    .ToList();
-                FilteredMovies = new ObservableCollection<Movie>(filtered);
-            }
+            var filtered = MoviesInProgress.AsEnumerable();
+
+            if (!string.IsNullOrWhiteSpace(SearchText))
+                filtered = filtered.Where(m => m.Title.Contains(SearchText, System.StringComparison.OrdinalIgnoreCase));
+
+            if (!string.IsNullOrWhiteSpace(SelectedGenre) && SelectedGenre != "All")
+                filtered = filtered.Where(m => m.Genre == SelectedGenre);
+
+            FilteredMovies = new ObservableCollection<Movie>(filtered);
         }
 
         private string newMovieTitle = string.Empty; // Default value

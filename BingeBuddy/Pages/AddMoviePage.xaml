@@ -3,37 +3,62 @@
              x:Class="BingeBuddy.Pages.AddMoviePage"
              xmlns:local="clr-namespace:BingeBuddy.Pages"
              BackgroundColor="#2C3E50">
-    <Grid RowDefinitions="Auto,*">
-        <!-- Search Bar -->
-        <SearchBar Grid.Row="0"
+    <Grid RowDefinitions="Auto,Auto,*">
+        <!-- Search Bar with Filter Icon -->
+        <Grid Grid.Row="0" ColumnDefinitions="*,Auto" Margin="10">
+            <SearchBar Grid.Column="0"
                    Placeholder="Search movies..." 
                    Text="{Binding SearchText}" 
                    TextColor="White" 
                    PlaceholderColor="Gray" 
-                   BackgroundColor="#1F2A38" 
-                   Margin="10" />
+                   BackgroundColor="#1F2A38" />
+            <ImageButton Grid.Column="1"
+                     Source="filter.svg"
+                     HeightRequest="20"
+                     WidthRequest="20"
+                     Margin="5,0,0,0"
+                     VerticalOptions="Center"
+                     HorizontalOptions="End"
+                     CornerRadius="20"
+                     BackgroundColor="Transparent"
+                     Clicked="OnFilterClicked"/>
+        </Grid>
+
+        <!-- Genre Picker (dropdown) under filter icon, right-aligned and narrow -->
+        <Grid Grid.Row="1" ColumnDefinitions="*,Auto" Margin="10,0,10,10">
+            <!--<BoxView Grid.Column="0" Color="Transparent"/>-->
+            <Picker Grid.Column="1"
+                ItemsSource="{Binding Genres}"
+                SelectedItem="{Binding SelectedGenre}"
+                IsVisible="{Binding IsGenrePickerVisible}"
+                Title="Filter by Genre"
+                TextColor="White"
+                BackgroundColor="#1F2A38"
+                WidthRequest="120"
+                HorizontalOptions="End"/>
+        </Grid>
 
         <!-- Movie Collection -->
-        <CollectionView Grid.Row="1"
-                        ItemsSource="{Binding FilteredMovies}">
+        <CollectionView Grid.Row="2"
+                    ItemsSource="{Binding FilteredMovies}">
             <CollectionView.ItemsLayout>
                 <GridItemsLayout Orientation="Vertical" Span="2" />
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame BackgroundColor="#1F2A38" CornerRadius="10" Padding="10" Margin="15,5">
+                    <Border BackgroundColor="#1F2A38" StrokeShape="RoundRectangle" StrokeThickness="1" Margin="15,5" Padding="10">
                         <VerticalStackLayout Spacing="10" Padding="10">
                             <Image Source="{Binding CoverPhoto}"   
-                                   HeightRequest="150"   
-                                   Aspect="AspectFill"   
-                                   HorizontalOptions="Center" />
+                               HeightRequest="150"   
+                               Aspect="AspectFill"   
+                               HorizontalOptions="Center" />
                             <Label Text="{Binding Title}"   
-                                   FontSize="18"   
-                                   FontAttributes="Bold"   
-                                   TextColor="White"   
-                                   HorizontalOptions="Center" />
+                               FontSize="18"   
+                               FontAttributes="Bold"   
+                               TextColor="White"   
+                               HorizontalOptions="Center" />
                         </VerticalStackLayout>
-                    </Frame>
+                    </Border>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

@@ -3250,3 +3250,8 @@ D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\draw
 D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable\icon_profile.png
 D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable\icon_search.png
 D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable\placeholder_movie_poster.jpg
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-hdpi\filter.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-mdpi\filter.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-xhdpi\filter.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-xxhdpi\filter.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-xxxhdpi\filter.png
