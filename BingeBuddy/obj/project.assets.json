@@ -26400,24 +26400,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Winmon\\.nuget\\packages\\": {},
+    "C:\\Users\\Eiji\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\USC\\2ND YEAR\\2ND SEM\\Mob Dev\\BingeBuddy\\BingeBuddy\\BingeBuddy.csproj",
+      "projectUniqueName": "D:\\__school\\mobdev\\bingeb\\BingeBuddy\\BingeBuddy.csproj",
       "projectName": "BingeBuddy",
-      "projectPath": "E:\\USC\\2ND YEAR\\2ND SEM\\Mob Dev\\BingeBuddy\\BingeBuddy\\BingeBuddy.csproj",
-      "packagesPath": "C:\\Users\\Winmon\\.nuget\\packages\\",
-      "outputPath": "E:\\USC\\2ND YEAR\\2ND SEM\\Mob Dev\\BingeBuddy\\BingeBuddy\\obj\\",
+      "projectPath": "D:\\__school\\mobdev\\bingeb\\BingeBuddy\\BingeBuddy.csproj",
+      "packagesPath": "C:\\Users\\Eiji\\.nuget\\packages\\",
+      "outputPath": "D:\\__school\\mobdev\\bingeb\\BingeBuddy\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Winmon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Eiji\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

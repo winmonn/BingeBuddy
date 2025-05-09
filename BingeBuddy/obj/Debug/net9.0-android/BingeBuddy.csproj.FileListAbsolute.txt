@@ -30,11 +30,6 @@ D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\mauifont.stamp
 D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\f\FluentUI.cs
 D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\f\OpenSans-Regular.ttf
 D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\f\OpenSans-Semibold.ttf
-D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-hdpi\dotnet_bot.png
-D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-mdpi\dotnet_bot.png
-D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-xhdpi\dotnet_bot.png
-D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-xxhdpi\dotnet_bot.png
-D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-xxxhdpi\dotnet_bot.png
 D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable\backbutton.png
 D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable\logo.png
 D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\mipmap-anydpi-v26\appicon.xml
@@ -3221,3 +3216,36 @@ E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-android\s
 E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-android\stamp\_GenerateJavaStubs.stamp
 E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-android\stamp\_GeneratePackageManagerJava.stamp
 E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-android\stamp\_ResolveLibraryProjectImports.stamp
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-hdpi\home.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-hdpi\movie.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-hdpi\notification.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-hdpi\profile.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-hdpi\settings.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-mdpi\home.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-mdpi\movie.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-mdpi\notification.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-mdpi\profile.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-mdpi\settings.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-xhdpi\home.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-xhdpi\movie.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-xhdpi\notification.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-xhdpi\profile.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-xhdpi\settings.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-xxhdpi\home.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-xxhdpi\movie.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-xxhdpi\notification.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-xxhdpi\profile.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-xxhdpi\settings.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-xxxhdpi\home.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-xxxhdpi\movie.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-xxxhdpi\notification.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-xxxhdpi\profile.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable-xxxhdpi\settings.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable\default_avatar.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable\icon_bookmark.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable\icon_comment.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable\icon_home.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable\icon_like.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable\icon_more.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable\icon_profile.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable\icon_search.png
