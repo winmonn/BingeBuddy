@@ -1,3 +1,6 @@
+using BingeBuddy.Models;
+using BingeBuddy.ViewModels;
+
 namespace BingeBuddy.Pages
 {
     public partial class AddMoviePage : ContentPage
@@ -5,6 +8,7 @@ namespace BingeBuddy.Pages
         public AddMoviePage()
         {
             InitializeComponent();
+            BindingContext = new MovieViewModel();
         }
     }
 }
