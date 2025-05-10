@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BingeBuddy")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+bf501e9dae9d0271f25e700a9c922a701074c3a6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+1f9c2e5b8dd5a53347d51740972dc3026fdd1ade")]
 [assembly: System.Reflection.AssemblyProductAttribute("BingeBuddy")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BingeBuddy")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
