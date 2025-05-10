@@ -1,10 +1,148 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:BingeBuddy"
              x:Class="BingeBuddy.Pages.SettingsPage"
-             BackgroundColor="#2C3E50">
-    <StackLayout>
-        <Label Text="Settings"
-               VerticalOptions="CenterAndExpand"
-               HorizontalOptions="CenterAndExpand" />
-    </StackLayout>
+             Title="Settings"
+             BackgroundColor="White">
+
+    <VerticalStackLayout>
+
+        <Grid BackgroundColor="#2C3E50" Padding="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image Source="settings_icon.png" HeightRequest="24" WidthRequest="24"/>
+            <Label Text="Settings"
+               Grid.Column="1"
+               FontSize="24"
+               FontAttributes="Bold"
+               TextColor="White"
+               VerticalOptions="Center"
+               Margin="10,0,0,0"/>
+        </Grid>
+
+        <!-- Search Bar -->
+        <SearchBar Placeholder="Search for a setting..."
+                   BackgroundColor="#F0F0F0"
+                   CancelButtonColor="Gray"
+                   PlaceholderColor="#999"
+                   TextColor="Black" />
+
+        <!-- Settings Items -->
+        <VerticalStackLayout Spacing="12">
+
+            <!-- Individual Setting Row Template -->
+            <Grid ColumnDefinitions="Auto,*,Auto" Padding="10" BackgroundColor="White">
+                <Image Source="user_icon.png"
+                   WidthRequest="24"
+                   HeightRequest="24"
+                   VerticalOptions="Center" />
+                <Label Grid.Column="1"
+                   Text="Account"
+                   VerticalOptions="Center"
+                   FontSize="16"
+                   TextColor="Black"
+                   Margin="15,0" />
+                <Image Grid.Column="2"
+                   Source="arrow_right.png"
+                   WidthRequest="18"
+                   HeightRequest="18"
+                   VerticalOptions="Center" />
+            </Grid>
+
+
+            <Grid ColumnDefinitions="Auto,*,Auto" Padding="10">
+                <Image Source="notification_icon2.png"
+                       WidthRequest="24"
+                       HeightRequest="24"
+                       VerticalOptions="Center" />
+                <Label Grid.Column="1"
+                       Text="Notifications"
+                       VerticalOptions="Center"
+                       FontSize="16"
+                       TextColor="Black"
+                       Margin="15,0" />
+                <Image Grid.Column="2"
+                       Source="arrow_right.png"
+                       WidthRequest="18"
+                       HeightRequest="18"
+                       VerticalOptions="Center" />
+            </Grid>
+
+            <Grid ColumnDefinitions="Auto,*,Auto" Padding="10">
+                <Image Source="appearance_icon.png"
+                       WidthRequest="24"
+                       HeightRequest="24"
+                       VerticalOptions="Center" />
+                <Label Grid.Column="1"
+                       Text="Appearance"
+                       VerticalOptions="Center"
+                       FontSize="16"
+                       TextColor="Black"
+                       Margin="15,0" />
+                <Image Grid.Column="2"
+                       Source="arrow_right.png"
+                       WidthRequest="18"
+                       HeightRequest="18"
+                       VerticalOptions="Center" />
+            </Grid>
+
+            <Grid ColumnDefinitions="Auto,*,Auto" Padding="10">
+                <Image Source="privacy_icon.png"
+                       WidthRequest="24"
+                       HeightRequest="24"
+                       VerticalOptions="Center" />
+                <Label Grid.Column="1"
+                       Text="Privacy and Security"
+                       VerticalOptions="Center"
+                       FontSize="16"
+                       TextColor="Black"
+                       Margin="15,0" />
+                <Image Grid.Column="2"
+                       Source="arrow_right.png"
+                       WidthRequest="18"
+                       HeightRequest="18"
+                       VerticalOptions="Center" />
+            </Grid>
+
+            <Grid ColumnDefinitions="Auto,*,Auto" Padding="10">
+                <Image Source="support_icon.png"
+                       WidthRequest="24"
+                       HeightRequest="24"
+                       VerticalOptions="Center" />
+                <Label Grid.Column="1"
+                       Text="Help and Support"
+                       VerticalOptions="Center"
+                       FontSize="16"
+                       TextColor="Black"
+                       Margin="15,0" />
+                <Image Grid.Column="2"
+                       Source="arrow_right.png"
+                       WidthRequest="18"
+                       HeightRequest="18"
+                       VerticalOptions="Center" />
+            </Grid>
+
+            <Grid ColumnDefinitions="Auto,*,Auto" Padding="10">
+                <Image Source="about_icon.png"
+                       WidthRequest="24"
+                       HeightRequest="24"
+                       VerticalOptions="Center" />
+                <Label Grid.Column="1"
+                       Text="About"
+                       VerticalOptions="Center"
+                       FontSize="16"
+                       TextColor="Black"
+                       Margin="15,0" />
+                <Image Grid.Column="2"
+                       Source="arrow_right.png"
+                       WidthRequest="18"
+                       HeightRequest="18"
+                       VerticalOptions="Center" />
+            </Grid>
+
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+
 </ContentPage>

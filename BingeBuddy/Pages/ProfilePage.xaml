@@ -7,15 +7,22 @@
 
     <Grid RowDefinitions="Auto,*,Auto">
         <!-- Top Header -->
-        <Grid BackgroundColor="#738AA6" Padding="15" Row="0">
-            <Label Text="My Profile"
-                   FontSize="24"
-                   FontFamily="Comic Sans MS"
-                   HorizontalOptions="Center"
-                   TextColor="White"/>
+        <Grid BackgroundColor="#2C3E50" Padding="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Image Source="profile_icon.png" HeightRequest="24" WidthRequest="24"/>
+        <Label Text="Profile"
+               Grid.Column="1"
+               FontSize="24"
+               FontAttributes="Bold"
+               TextColor="White"
+               VerticalOptions="Center"
+               Margin="10,0,0,0"/>
         </Grid>
 
-        <!-- Main Content -->
+    <!-- Main Content -->
         <ScrollView Grid.Row="1">
             <StackLayout Padding="20" Spacing="20">
                 <StackLayout Orientation="Horizontal" Spacing="15">
@@ -34,25 +41,27 @@
                 </StackLayout>
 
                 <Button Text="Edit Profile"
-                        BackgroundColor="#324de3"
+                        BackgroundColor="#2C3E50"
                         TextColor="White"
                         CornerRadius="20"
                         HorizontalOptions="End"
                         WidthRequest="120"
                         Clicked="OnEditProfileClicked"/>
 
-                <Frame BorderColor="LightGray" CornerRadius="10" Padding="10">
-                    <StackLayout>
+                <Border Stroke="LightGray" StrokeThickness="1" BackgroundColor="White" 
+                 StrokeShape="RoundRectangle 10" Padding="10">
+                    <VerticalStackLayout>
                         <Label Text="Share something..." FontSize="14"/>
                         <Editor x:Name="StatusEditor"
-                                HeightRequest="60"
-                                Placeholder="What's on your mind?" />
+                HeightRequest="60"
+                Placeholder="What's on your mind?" />
                         <Button Text="Post"
-                                BackgroundColor="#324de3"
-                                TextColor="White"
-                                Clicked="OnPostStatusClicked"/>
-                    </StackLayout>
-                </Frame>
+                BackgroundColor="#2C3E50"
+                TextColor="White"
+                Clicked="OnPostStatusClicked"/>
+                    </VerticalStackLayout>
+                </Border>
+
 
                 <Label Text="| Ratings"
                        FontSize="16"

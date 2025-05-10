@@ -5,6 +5,8 @@ namespace BingeBuddy.Pages
         public NotificationsPage()
         {
             InitializeComponent();
+            BindingContext = new NotificationsPageViewModel();
         }
     }
+
 }
