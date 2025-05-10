@@ -50,6 +50,11 @@ appiconWideTile.scale-200.png
 appiconWideTile.scale-400.png
 backbutton.scale-100.png
 default_avatar.scale-100.png
+filter.scale-100.png
+filter.scale-125.png
+filter.scale-150.png
+filter.scale-200.png
+filter.scale-400.png
 home.scale-100.png
 home.scale-125.png
 home.scale-150.png
@@ -73,6 +78,7 @@ notification.scale-125.png
 notification.scale-150.png
 notification.scale-200.png
 notification.scale-400.png
+placeholder_movie_poster.scale-100.jpg
 profile.scale-100.png
 profile.scale-125.png
 profile.scale-150.png
