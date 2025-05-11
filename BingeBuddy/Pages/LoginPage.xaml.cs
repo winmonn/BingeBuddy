@@ -1,4 +1,5 @@
-using BingeBuddy.Pages;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Storage;
 
 namespace BingeBuddy.Pages
 {
@@ -11,13 +12,19 @@ namespace BingeBuddy.Pages
 
         private async void OnLoginButtonClicked(object sender, EventArgs e)
         {
-            // Perform login validation here
-            bool isValidLogin = true; // Replace with actual login logic
+            string enteredUsername = usernameEntry.Text?.Trim();
+            string enteredPassword = passwordEntry.Text;
 
-            if (isValidLogin)
+            string savedUsername = Preferences.Get("SavedUsername", string.Empty);
+            string savedPassword = Preferences.Get("SavedPassword", string.Empty);
+
+            if (enteredUsername == savedUsername && enteredPassword == savedPassword)
             {
-                // Navigate to AppShell
-                App.NavigateToHomePage();
+                // Successful login
+                await DisplayAlert("Welcome", $"Hello, {enteredUsername}!", "OK");
+
+                // Navigate to the Home Page (AppShell method or direct page)
+                App.NavigateToHomePage(); // You can replace with Navigation.PushAsync(new HomePage());
             }
             else
             {
@@ -27,7 +34,6 @@ namespace BingeBuddy.Pages
 
         private async void OnSignUpButtonClicked(object sender, EventArgs e)
         {
-            // Navigate to the RegistrationPage
             await Navigation.PushAsync(new RegistrationPage());
         }
     }

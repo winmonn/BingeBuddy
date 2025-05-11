@@ -3,8 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BingeBuddy.Pages.RegistrationPage"
              BackgroundColor="White">
+
     <ContentPage.Content>
         <VerticalStackLayout Padding="20" Spacing="20">
+
             <!-- Header Section -->
             <Grid BackgroundColor="#2C3E50" HeightRequest="150">
                 <Grid.RowDefinitions>
@@ -13,7 +15,8 @@
                 <ImageButton Source="backbutton.png" 
                              HorizontalOptions="Start" 
                              VerticalOptions="Center" 
-                             Margin="10" />
+                             Margin="10"
+                             Clicked="OnLoginRedirectButtonClicked" />
                 <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
                     <Label Text="BingeBuddy" 
                            FontSize="36" 
@@ -30,24 +33,33 @@
                    FontSize="18" 
                    HorizontalOptions="Center" 
                    TextColor="Black" />
-            <Entry Placeholder="Username" 
+
+            <Entry x:Name="usernameEntry"
+                   Placeholder="Username" 
                    BackgroundColor="#E0E0E0" 
                    HeightRequest="50" 
                    FontSize="16" />
-            <Entry Placeholder="Email" 
+
+            <Entry x:Name="emailEntry"
+                   Placeholder="Email" 
                    BackgroundColor="#E0E0E0" 
                    HeightRequest="50" 
                    FontSize="16" />
-            <Entry Placeholder="Password" 
-                   IsPassword="True" 
+
+            <Entry x:Name="passwordEntry"
+                   Placeholder="Password" 
+                   IsPassword="True"
                    BackgroundColor="#E0E0E0" 
                    HeightRequest="50" 
                    FontSize="16" />
-            <Entry Placeholder="Confirm Password" 
-                   IsPassword="True" 
+
+            <Entry x:Name="confirmPasswordEntry"
+                   Placeholder="Confirm Password" 
+                   IsPassword="True"
                    BackgroundColor="#E0E0E0" 
                    HeightRequest="50" 
                    FontSize="16" />
+
             <Button Text="Register" 
                     BackgroundColor="#2C3E50" 
                     TextColor="White" 
@@ -55,7 +67,7 @@
                     FontSize="16"
                     Clicked="OnRegisterButtonClicked" />
 
-            <!-- Footer Links -->
+            <!-- Footer Link -->
             <VerticalStackLayout HorizontalOptions="Center">
                 <Button Text="Already have an account? Log in" 
                         FontSize="14" 
@@ -64,6 +76,7 @@
                         WidthRequest="235" 
                         Clicked="OnLoginRedirectButtonClicked" />
             </VerticalStackLayout>
+
         </VerticalStackLayout>
     </ContentPage.Content>
 </ContentPage>
