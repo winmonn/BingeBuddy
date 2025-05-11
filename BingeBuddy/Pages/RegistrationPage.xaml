@@ -46,6 +46,7 @@
                    HeightRequest="50" 
                    FontSize="16" />
 
+
             <Entry x:Name="passwordEntry"
                    Placeholder="Password" 
                    IsPassword="True"

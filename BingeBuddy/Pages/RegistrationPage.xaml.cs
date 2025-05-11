@@ -12,17 +12,21 @@ namespace BingeBuddy.Pages
 
         private async void OnRegisterButtonClicked(object sender, EventArgs e)
         {
-            string username = usernameEntry.Text;
-            string email = emailEntry.Text;
+            string username = usernameEntry.Text?.Trim();
+            string email = emailEntry.Text?.Trim();
             string password = passwordEntry.Text;
             string confirmPassword = confirmPasswordEntry.Text;
 
-            if (string.IsNullOrWhiteSpace(username) ||
-                string.IsNullOrWhiteSpace(email) ||
-                string.IsNullOrWhiteSpace(password) ||
-                string.IsNullOrWhiteSpace(confirmPassword))
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(email) ||
+    string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(confirmPassword))
             {
                 await DisplayAlert("Error", "Please fill out all fields.", "OK");
+                return;
+            }
+
+            if (!email.EndsWith(".com") || !email.Contains("@"))
+            {
+                await DisplayAlert("Invalid Email", "Email must be a valid email address.", "OK");
                 return;
             }
 
@@ -32,12 +36,14 @@ namespace BingeBuddy.Pages
                 return;
             }
 
-            // Save user data locally (for demo purposes only; not secure)
+            // Save user data locally
             Preferences.Set("SavedUsername", username);
-            Preferences.Set("SavedEmail", email);
             Preferences.Set("SavedPassword", password);
+            Preferences.Set("SavedEmail", email);
 
-            await DisplayAlert("Success", "Registration successful!", "OK");
+            await DisplayAlert("Success", "Account created successfully!", "OK");
+
+            // Navigate to login page
             await Navigation.PushAsync(new LoginPage());
         }
 

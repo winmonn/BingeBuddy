@@ -55,16 +55,20 @@
                     Clicked="OnLoginButtonClicked" />
 
             <!-- Footer Links -->
-            <VerticalStackLayout HorizontalOptions="Center">
+            <!-- Footer Links -->
+            <VerticalStackLayout HorizontalOptions="Center" Spacing="5">
                 <Label Text="Forgot Password?" 
-                       FontSize="14" 
-                       TextColor="Gray" />
+                    FontSize="14" 
+                    TextColor="Gray"
+                    HorizontalOptions="Center" />
                 <Button Text="New to BingeBuddy? Sign Up" 
-                        FontSize="14" 
-                        TextColor="Gray" 
-                        BackgroundColor="Transparent" 
-                        Clicked="OnSignUpButtonClicked" />
+                    FontSize="14" 
+                    TextColor="Gray" 
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="Center"
+                    Clicked="OnSignUpButtonClicked" />
             </VerticalStackLayout>
+
         </VerticalStackLayout>
     </ContentPage.Content>
 </ContentPage>
