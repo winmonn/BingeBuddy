@@ -19,7 +19,7 @@ namespace BingeBuddy.ViewModels
         public ObservableCollection<Movie> UpcomingMovies { get; set; } = new();
         public ObservableCollection<string> Genres { get; set; } = new();
 
-        private string statusFilter = "All";
+        private string statusFilter = "Progress";
         public string StatusFilter
         {
             get => statusFilter;
