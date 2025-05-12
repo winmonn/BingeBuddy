@@ -5,14 +5,41 @@ using System.Linq;
 using BingeBuddy.Models;
 using System.Windows.Input;
 using System.Diagnostics;
+using Microsoft.Maui.Graphics; // For Color
 
 namespace BingeBuddy.ViewModels
 {
     public class MovieViewModel : INotifyPropertyChanged
     {
+        public Color InProgressButtonColor => StatusFilter == "Progress" ? Color.FromArgb("#34495E") : Colors.Transparent;
+        public Color CompletedButtonColor => StatusFilter == "Completed" ? Color.FromArgb("#34495E") : Colors.Transparent;
+        public Color InProgressTextColor => StatusFilter == "Progress" ? Colors.White : Color.FromArgb("#5f81a3");
+        public Color CompletedTextColor => StatusFilter == "Completed" ? Colors.White : Color.FromArgb("#5f81a3");
         public ObservableCollection<Movie> MoviesInProgress { get; set; } = new();
         public ObservableCollection<Movie> UpcomingMovies { get; set; } = new();
         public ObservableCollection<string> Genres { get; set; } = new();
+
+        private string statusFilter = "All";
+        public string StatusFilter
+        {
+            get => statusFilter;
+            set
+            {
+                if (statusFilter != value)
+                {
+                    statusFilter = value;
+                    OnPropertyChanged();
+                    OnPropertyChanged(nameof(InProgressButtonColor));
+                    OnPropertyChanged(nameof(CompletedButtonColor));
+                    OnPropertyChanged(nameof(InProgressTextColor));
+                    OnPropertyChanged(nameof(CompletedTextColor));
+                    FilterMovies();
+                }
+            }
+        }
+
+        public ICommand ShowCompletedCommand { get; }
+        public ICommand ShowInProgressCommand { get; }
 
         private bool isGenrePickerVisible;
         public bool IsGenrePickerVisible
@@ -72,8 +99,8 @@ namespace BingeBuddy.ViewModels
                     "placeholder_movie_poster.jpg",
                     "A mind-bending thriller about dream invasion.",
                     "Sci-Fi",
-                    "Progress",
-                    false
+                    "Completed",
+                    true
                 ),
                 new Movie(
                     "The Dark Knight",
@@ -88,8 +115,8 @@ namespace BingeBuddy.ViewModels
                     "placeholder_movie_poster.jpg",
                     "A high school teacher turned drug kingpin.",
                     "Drama",
-                    "Progress",
-                    false
+                    "Completed",
+                    true
                 ),
                 new Movie(
                     "Stranger Things",
@@ -112,8 +139,8 @@ namespace BingeBuddy.ViewModels
                     "placeholder_movie_poster.jpg",
                     "Noble families vie for control of the Iron Throne.",
                     "Fantasy",
-                    "Progress",
-                    false
+                    "Completed",
+                    true
                 ),
                 new Movie(
                     "The Mandalorian",
@@ -136,8 +163,8 @@ namespace BingeBuddy.ViewModels
                     "placeholder_movie_poster.jpg",
                     "A mutated monster-hunter struggles to find his place in a world.",
                     "Fantasy",
-                    "Progress",
-                    false
+                    "Completed",
+                    true
                 ),
                 new Movie(
                     "Friends",
@@ -184,8 +211,8 @@ namespace BingeBuddy.ViewModels
                     "placeholder_movie_poster.jpg",
                     "A mockumentary on a group of typical office workers.",
                     "Comedy",
-                    "Progress",
-                    false
+                    "Completed",
+                    true
                 ),
                 new Movie(
                     "Peaky Blinders",
@@ -232,13 +259,16 @@ namespace BingeBuddy.ViewModels
                     "placeholder_movie_poster.jpg",
                     "A dramatization of the true story of the Chernobyl nuclear disaster.",
                     "Drama",
-                    "Progress",
-                    false
+                    "Completed",
+                    true
                 )
             };
 
             // Initialize the SelectGenreCommand
             SelectGenreCommand = new Command<string>(OnGenreSelected);
+
+            ShowCompletedCommand = new Command(() => StatusFilter = "Completed");
+            ShowInProgressCommand = new Command(() => StatusFilter = "Progress");
 
             // Initialize FilteredMovies with all movies
             FilteredMovies = new ObservableCollection<Movie>(MoviesInProgress);
@@ -255,6 +285,7 @@ namespace BingeBuddy.ViewModels
             FilterMovies();
         }
 
+
         private void OnGenreSelected(string genre)
         {
             Debug.WriteLine($"Genre selected: {genre}");
@@ -269,6 +300,9 @@ namespace BingeBuddy.ViewModels
 
             if (!string.IsNullOrWhiteSpace(SelectedGenre) && SelectedGenre != "All")
                 filtered = filtered.Where(m => m.Genre == SelectedGenre);
+
+            if (!string.IsNullOrWhiteSpace(StatusFilter) && StatusFilter != "All")
+                filtered = filtered.Where(m => m.Category == StatusFilter);
 
             FilteredMovies.Clear();
             foreach (var movie in filtered)

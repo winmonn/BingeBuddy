@@ -4,7 +4,7 @@
              x:Name="AddMoviePageRoot"
              xmlns:local="clr-namespace:BingeBuddy.Pages"
              BackgroundColor="#2C3E50">
-    <Grid RowDefinitions="Auto,Auto,*">
+    <Grid RowDefinitions="Auto,Auto,Auto,*">
         <!-- Search Bar with Filter Icon -->
         <Grid Grid.Row="0" ColumnDefinitions="*,Auto" Margin="10">
             <SearchBar Grid.Column="0"
@@ -42,8 +42,28 @@
             </CollectionView>
         </ScrollView>
 
+        <!-- Status Filter Buttons -->
+        <Grid Grid.Row="2" ColumnDefinitions="*,*" Margin="10,0,10,10" ColumnSpacing="10">
+            <Button Grid.Column="0"
+                    Text="Show In Progress"
+                    Command="{Binding ShowInProgressCommand}"
+                    BackgroundColor="{Binding InProgressButtonColor}"
+                    TextColor="{Binding InProgressTextColor}"
+                    Padding="5"
+                    CornerRadius="5"
+                    HorizontalOptions="FillAndExpand"/>
+            <Button Grid.Column="1"
+                    Text="Show Completed"
+                    Command="{Binding ShowCompletedCommand}"
+                    BackgroundColor="{Binding CompletedButtonColor}"
+                    TextColor="{Binding CompletedTextColor}"
+                    Padding="5"
+                    CornerRadius="5"
+                    HorizontalOptions="FillAndExpand"/>
+        </Grid>
+
         <!-- Movie Collection -->
-        <CollectionView Grid.Row="2"
+        <CollectionView Grid.Row="3"
                     ItemsSource="{Binding FilteredMovies}">
             <CollectionView.ItemsLayout>
                 <GridItemsLayout Orientation="Vertical" Span="2" />
