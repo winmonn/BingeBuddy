@@ -5,50 +5,68 @@
              Title="Profile"
              BackgroundColor="White">
 
-    <Grid RowDefinitions="Auto,*,Auto">
-        
-        <!-- Header -->
-        <StackLayout BackgroundColor="#2C3E50" Padding="20" Spacing="10">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <ImageButton Source="icon_back.png" BackgroundColor="Transparent" HeightRequest="24"/>
-                <Label Grid.Column="1" Text="Profile" TextColor="White" FontSize="20" HorizontalOptions="Center"/>
-                <ImageButton Grid.Column="2" Source="icon_menu.png" BackgroundColor="Transparent" HeightRequest="24"/>
+    <ScrollView>
+        <VerticalStackLayout Spacing="0">
+            <!-- Header with Avatar and Info -->
+            <Grid Padding="20" BackgroundColor="#2C3E50">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Top bar with back/menu -->
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <ImageButton Source="icon_back.png" BackgroundColor="Transparent" HeightRequest="24"/>
+                    <Label Grid.Column="1" Text="Profile" TextColor="White" FontSize="20" HorizontalOptions="Center"/>
+                    <ImageButton Grid.Column="2" Source="icon_menu.png" BackgroundColor="Transparent" HeightRequest="24"/>
+                </Grid>
+
+                <!-- Profile Info -->
+                <VerticalStackLayout Grid.Row="1" HorizontalOptions="Center" Margin="0,10">
+                    <Image Source="default_avatar.png" HeightRequest="90" WidthRequest="90" Clip="Circle"/>
+                    <Grid>
+                        <Label Text="@dpzc_" TextColor="White" FontAttributes="Bold" FontSize="18"/>
+                        <Image Source="icon_edit.png" HeightRequest="16" WidthRequest="16"
+                               Margin="5,0" HorizontalOptions="End" VerticalOptions="Center"/>
+                    </Grid>
+                    <Label Text="Film enthusiast and amateur critic. Obsessed with sci-fi, thrillers, and anything with great cinematography. Always looking for watch party buddies!"
+                           TextColor="White" FontSize="12" HorizontalTextAlignment="Center" Margin="10,0"/>
+                </VerticalStackLayout>
+
+                <!-- Stats -->
+                <Grid Grid.Row="2" ColumnSpacing="20" Padding="0,15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <VerticalStackLayout Grid.Column="0" HorizontalOptions="Center">
+                        <Label Text="148" TextColor="White" FontAttributes="Bold" FontSize="16"/>
+                        <Label Text="Films" TextColor="White" FontSize="12"/>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center">
+                        <Label Text="24" TextColor="White" FontAttributes="Bold" FontSize="16"/>
+                        <Label Text="Lists" TextColor="White" FontSize="12"/>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Grid.Column="2" HorizontalOptions="Center">
+                        <Label Text="483" TextColor="White" FontAttributes="Bold" FontSize="16"/>
+                        <Label Text="Following" TextColor="White" FontSize="12"/>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Grid.Column="3" HorizontalOptions="Center">
+                        <Label Text="629" TextColor="White" FontAttributes="Bold" FontSize="16"/>
+                        <Label Text="Followers" TextColor="White" FontSize="12"/>
+                    </VerticalStackLayout>
+                </Grid>
             </Grid>
 
-            <StackLayout HorizontalOptions="Center" Spacing="5">
-                <Image Source="default_avatar.png" HeightRequest="80" WidthRequest="80" Clip="Circle"/>
-                <Label Text="@dpzc_" TextColor="White" FontAttributes="Bold" FontSize="18"/>
-                <Label Text="Film enthusiast and amateur critic..." TextColor="White" FontSize="13" HorizontalTextAlignment="Center"/>
-            </StackLayout>
-
-            <Grid ColumnSpacing="20" Padding="0,10">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <StackLayout Grid.Column="0" HorizontalOptions="Center">
-                    <Label Text="148" TextColor="White" FontAttributes="Bold" FontSize="16"/>
-                    <Label Text="Films" TextColor="White" FontSize="12"/>
-                </StackLayout>
-                <StackLayout Grid.Column="1" HorizontalOptions="Center">
-                    <Label Text="24" TextColor="White" FontAttributes="Bold" FontSize="16"/>
-                    <Label Text="Lists" TextColor="White" FontSize="12"/>
-                </StackLayout>
-                <StackLayout Grid.Column="2" HorizontalOptions="Center">
-                    <Label Text="629" TextColor="White" FontAttributes="Bold" FontSize="16"/>
-                    <Label Text="Followers" TextColor="White" FontSize="12"/>
-                </StackLayout>
-            </Grid>
-        </StackLayout>
-
-        <!-- Tabs -->
-        <StackLayout Grid.Row="1">
+            <!-- Tabs -->
             <Grid ColumnDefinitions="*,*,*,*" Padding="10" BackgroundColor="White">
                 <Button Text="Activity" Clicked="OnTabClicked" StyleId="ActivityTab"/>
                 <Button Text="Lists" Clicked="OnTabClicked" StyleId="ListsTab" Grid.Column="1"/>
@@ -56,8 +74,9 @@
                 <Button Text="Watch Later" Clicked="OnTabClicked" StyleId="WatchLaterTab" Grid.Column="3"/>
             </Grid>
 
+            <!-- Content Area -->
             <ContentView x:Name="TabContent" Padding="10"/>
-        </StackLayout>
-    </Grid>
-</ContentPage>
 
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
