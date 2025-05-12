@@ -2,101 +2,62 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BingeBuddy.Pages.ProfilePage"
-             Title="My Profile"
+             Title="Profile"
              BackgroundColor="White">
 
     <Grid RowDefinitions="Auto,*,Auto">
-        <!-- Top Header -->
-        <Grid BackgroundColor="#2C3E50" Padding="20">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <Image Source="profile_icon.png" HeightRequest="24" WidthRequest="24"/>
-        <Label Text="Profile"
-               Grid.Column="1"
-               FontSize="24"
-               FontAttributes="Bold"
-               TextColor="White"
-               VerticalOptions="Center"
-               Margin="10,0,0,0"/>
-        </Grid>
+        
+        <!-- Header -->
+        <StackLayout BackgroundColor="#2C3E50" Padding="20" Spacing="10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <ImageButton Source="icon_back.png" BackgroundColor="Transparent" HeightRequest="24"/>
+                <Label Grid.Column="1" Text="Profile" TextColor="White" FontSize="20" HorizontalOptions="Center"/>
+                <ImageButton Grid.Column="2" Source="icon_menu.png" BackgroundColor="Transparent" HeightRequest="24"/>
+            </Grid>
 
-    <!-- Main Content -->
-        <ScrollView Grid.Row="1">
-            <StackLayout Padding="20" Spacing="20">
-                <StackLayout Orientation="Horizontal" Spacing="15">
-                    <Image Source="default_avatar.png"
-                           HeightRequest="80"
-                           WidthRequest="80"
-                           Aspect="AspectFill"
-                           VerticalOptions="Start"/>
-                    <StackLayout>
-                        <Label Text="Karen"
-                               FontSize="22"
-                               FontAttributes="Bold"/>
-                        <Label Text="@karen_710"
-                               TextColor="Gray"/>
-                    </StackLayout>
-                </StackLayout>
-
-                <Button Text="Edit Profile"
-                        BackgroundColor="#2C3E50"
-                        TextColor="White"
-                        CornerRadius="20"
-                        HorizontalOptions="End"
-                        WidthRequest="120"
-                        Clicked="OnEditProfileClicked"/>
-
-                <Border Stroke="LightGray" StrokeThickness="1" BackgroundColor="White" 
-                 StrokeShape="RoundRectangle 10" Padding="10">
-                    <VerticalStackLayout>
-                        <Label Text="Share something..." FontSize="14"/>
-                        <Editor x:Name="StatusEditor"
-                HeightRequest="60"
-                Placeholder="What's on your mind?" />
-                        <Button Text="Post"
-                BackgroundColor="#2C3E50"
-                TextColor="White"
-                Clicked="OnPostStatusClicked"/>
-                    </VerticalStackLayout>
-                </Border>
-
-
-                <Label Text="| Ratings"
-                       FontSize="16"
-                       FontAttributes="Bold"/>
-                <Label Text="No ratings yet" TextColor="Gray"/>
-                <Label Text="| Watchlist"
-                       FontSize="16"
-                       FontAttributes="Bold"/>
-                <Label Text="No watchlist yet" TextColor="Gray"/>
-                <Label Text="| List"
-                       FontSize="16"
-                       FontAttributes="Bold"/>
-                <Label Text="No list yet" TextColor="Gray"/>
+            <StackLayout HorizontalOptions="Center" Spacing="5">
+                <Image Source="default_avatar.png" HeightRequest="80" WidthRequest="80" Clip="Circle"/>
+                <Label Text="@dpzc_" TextColor="White" FontAttributes="Bold" FontSize="18"/>
+                <Label Text="Film enthusiast and amateur critic..." TextColor="White" FontSize="13" HorizontalTextAlignment="Center"/>
             </StackLayout>
-        </ScrollView>
 
-        <!-- Bottom Navigation Bar -->
-        <!--<Grid Row="2"
-              BackgroundColor="Black"
-              Padding="10"
-              ColumnSpacing="30"
-              HeightRequest="60">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+            <Grid ColumnSpacing="20" Padding="0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Column="0" HorizontalOptions="Center">
+                    <Label Text="148" TextColor="White" FontAttributes="Bold" FontSize="16"/>
+                    <Label Text="Films" TextColor="White" FontSize="12"/>
+                </StackLayout>
+                <StackLayout Grid.Column="1" HorizontalOptions="Center">
+                    <Label Text="24" TextColor="White" FontAttributes="Bold" FontSize="16"/>
+                    <Label Text="Lists" TextColor="White" FontSize="12"/>
+                </StackLayout>
+                <StackLayout Grid.Column="2" HorizontalOptions="Center">
+                    <Label Text="629" TextColor="White" FontAttributes="Bold" FontSize="16"/>
+                    <Label Text="Followers" TextColor="White" FontSize="12"/>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
 
-            <ImageButton Source="icon_home.png" Grid.Column="0" BackgroundColor="Transparent"/>
-            <ImageButton Source="icon_search.png" Grid.Column="1" BackgroundColor="Transparent"/>
-            <ImageButton Source="icon_bookmark.png" Grid.Column="2" BackgroundColor="Transparent"/>
-            <ImageButton Source="icon_profile.png" Grid.Column="3" BackgroundColor="Transparent"/>
-            <ImageButton Source="icon_more.png" Grid.Column="4" BackgroundColor="Transparent"/>
-        </Grid>-->
+        <!-- Tabs -->
+        <StackLayout Grid.Row="1">
+            <Grid ColumnDefinitions="*,*,*,*" Padding="10" BackgroundColor="White">
+                <Button Text="Activity" Clicked="OnTabClicked" StyleId="ActivityTab"/>
+                <Button Text="Lists" Clicked="OnTabClicked" StyleId="ListsTab" Grid.Column="1"/>
+                <Button Text="Films" Clicked="OnTabClicked" StyleId="FilmsTab" Grid.Column="2"/>
+                <Button Text="Watch Later" Clicked="OnTabClicked" StyleId="WatchLaterTab" Grid.Column="3"/>
+            </Grid>
+
+            <ContentView x:Name="TabContent" Padding="10"/>
+        </StackLayout>
     </Grid>
 </ContentPage>
+
