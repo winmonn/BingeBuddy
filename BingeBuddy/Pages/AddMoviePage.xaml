@@ -1,6 +1,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"  
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
              x:Class="BingeBuddy.Pages.AddMoviePage"
+             x:Name="AddMoviePageRoot"
              xmlns:local="clr-namespace:BingeBuddy.Pages"
              BackgroundColor="#2C3E50">
     <Grid RowDefinitions="Auto,Auto,*">
@@ -24,19 +25,22 @@
                      Clicked="OnFilterClicked"/>
         </Grid>
 
-        <!-- Genre Picker (dropdown) under filter icon, right-aligned and narrow -->
-        <Grid Grid.Row="1" ColumnDefinitions="*,Auto" Margin="10,0,10,10">
-            <!--<BoxView Grid.Column="0" Color="Transparent"/>-->
-            <Picker Grid.Column="1"
-                ItemsSource="{Binding Genres}"
-                SelectedItem="{Binding SelectedGenre}"
-                IsVisible="{Binding IsGenrePickerVisible}"
-                Title="Filter by Genre"
-                TextColor="White"
-                BackgroundColor="#1F2A38"
-                WidthRequest="120"
-                HorizontalOptions="End"/>
-        </Grid>
+        <!-- Genre Buttons -->
+        <ScrollView Grid.Row="1" Orientation="Horizontal" Margin="10,0,10,10" IsVisible="{Binding IsGenrePickerVisible}">
+            <CollectionView ItemsSource="{Binding Genres}" ItemsLayout="HorizontalList" SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Button Text="{Binding .}"
+                                Command="{Binding Path=BindingContext.SelectGenreCommand, Source={x:Reference AddMoviePageRoot}}"
+                                CommandParameter="{Binding .}"
+                                BackgroundColor="#1F2A38"
+                                TextColor="White"
+                                Padding="10"
+                                CornerRadius="20"/>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
 
         <!-- Movie Collection -->
         <CollectionView Grid.Row="2"

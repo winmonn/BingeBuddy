@@ -3,6 +3,8 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Linq;
 using BingeBuddy.Models;
+using System.Windows.Input;
+using System.Diagnostics;
 
 namespace BingeBuddy.ViewModels
 {
@@ -10,16 +12,14 @@ namespace BingeBuddy.ViewModels
     {
         public ObservableCollection<Movie> MoviesInProgress { get; set; } = new();
         public ObservableCollection<Movie> UpcomingMovies { get; set; } = new();
+        public ObservableCollection<string> Genres { get; set; } = new();
 
-        // genre filter option
         private bool isGenrePickerVisible;
         public bool IsGenrePickerVisible
         {
             get => isGenrePickerVisible;
             set { isGenrePickerVisible = value; OnPropertyChanged(); }
         }
-
-        public ObservableCollection<string> Genres { get; set; } = new();
         private string selectedGenre;
         public string SelectedGenre
         {
@@ -35,8 +35,6 @@ namespace BingeBuddy.ViewModels
             }
         }
 
-
-        // search filter support
         private string searchText = string.Empty;
         public string SearchText
         {
@@ -63,187 +61,205 @@ namespace BingeBuddy.ViewModels
             }
         }
 
+        public ICommand SelectGenreCommand { get; }
+
         public MovieViewModel()
         {
-            MoviesInProgress.Add(new Movie(
-                "Inception",
-                "placeholder_movie_poster.jpg",
-                "A mind-bending thriller about dream invasion.",
-                "Sci-Fi",
-                "Progress",
-                false
-            ));
-            MoviesInProgress.Add(new Movie(
-                "The Dark Knight",
-                "placeholder_movie_poster.jpg",
-                "A superhero battles crime in Gotham City.",
-                "Action",
-                "Completed",
-                true
-            ));
-            MoviesInProgress.Add(new Movie(
-                "Breaking Bad",
-                "placeholder_movie_poster.jpg",
-                "A high school teacher turned drug kingpin.",
-                "Drama",
-                "Progress",
-                false
-            ));
-            MoviesInProgress.Add(new Movie(
-                "Stranger Things",
-                "placeholder_movie_poster.jpg",
-                "A group of kids uncover supernatural mysteries.",
-                "Horror",
-                "Progress",
-                false
-            ));
-            MoviesInProgress.Add(new Movie(
-                "The Matrix",
-                "placeholder_movie_poster.jpg",
-                "A computer hacker learns about the true nature of reality.",
-                "Sci-Fi",
-                "Progress",
-                false
-            ));
-            MoviesInProgress.Add(new Movie(
-                "Game of Thrones",
-                "placeholder_movie_poster.jpg",
-                "Noble families vie for control of the Iron Throne.",
-                "Fantasy",
-                "Progress",
-                false
-            ));
-            MoviesInProgress.Add(new Movie(
-                "The Mandalorian",
-                "placeholder_movie_poster.jpg",
-                "A lone bounty hunter in the outer reaches of the galaxy.",
-                "Sci-Fi",
-                "Progress",
-                false
-            ));
-            MoviesInProgress.Add(new Movie(
-                "Money Heist",
-                "placeholder_movie_poster.jpg",
-                "A criminal mastermind plans the biggest heist in history.",
-                "Thriller",
-                "Progress",
-                false
-            ));
-            MoviesInProgress.Add(new Movie(
-                "The Witcher",
-                "placeholder_movie_poster.jpg",
-                "A mutated monster-hunter struggles to find his place in a world.",
-                "Fantasy",
-                "Progress",
-                false
-            ));
-            MoviesInProgress.Add(new Movie(
-                "Friends",
-                "placeholder_movie_poster.jpg",
-                "Follows the personal and professional lives of six friends in New York.",
-                "Comedy",
-                "Progress",
-                false
-            ));
-            MoviesInProgress.Add(new Movie(
-                "Sherlock",
-                "placeholder_movie_poster.jpg",
-                "A modern update finds the famous sleuth and his doctor partner solving crime in 21st century London.",
-                "Mystery",
-                "Progress",
-                false
-            ));
-            MoviesInProgress.Add(new Movie(
-                "Avatar: The Last Airbender",
-                "placeholder_movie_poster.jpg",
-                "A young boy must master all four elements to save the world.",
-                "Animation",
-                "Progress",
-                false
-            ));
-            MoviesInProgress.Add(new Movie(
-                "House of Cards",
-                "placeholder_movie_poster.jpg",
-                "A ruthless politician will stop at nothing to conquer Washington, D.C.",
-                "Drama",
-                "Progress",
-                false
-            ));
-            MoviesInProgress.Add(new Movie(
-                "Lost",
-                "placeholder_movie_poster.jpg",
-                "Survivors of a plane crash struggle to survive on a mysterious island.",
-                "Adventure",
-                "Progress",
-                false
-            ));
-            MoviesInProgress.Add(new Movie(
-                "The Office",
-                "placeholder_movie_poster.jpg",
-                "A mockumentary on a group of typical office workers.",
-                "Comedy",
-                "Progress",
-                false
-            ));
-            MoviesInProgress.Add(new Movie(
-                "Peaky Blinders",
-                "placeholder_movie_poster.jpg",
-                "A gangster family epic set in 1900s England.",
-                "Crime",
-                "Progress",
-                false
-            ));
-            MoviesInProgress.Add(new Movie(
-                "Black Mirror",
-                "placeholder_movie_poster.jpg",
-                "An anthology series exploring a twisted, high-tech world.",
-                "Sci-Fi",
-                "Progress",
-                false
-            ));
-            MoviesInProgress.Add(new Movie(
-                "Narcos",
-                "placeholder_movie_poster.jpg",
-                "A chronicled look at the criminal exploits of Colombian drug lord Pablo Escobar.",
-                "Crime",
-                "Progress",
-                false
-            ));
-            MoviesInProgress.Add(new Movie(
-                "Vikings",
-                "placeholder_movie_poster.jpg",
-                "The adventures of Ragnar Lothbrok, the greatest hero of his age.",
-                "Action",
-                "Progress",
-                false
-            ));
-            MoviesInProgress.Add(new Movie(
-                "Brooklyn Nine-Nine",
-                "placeholder_movie_poster.jpg",
-                "Comedy series following the exploits of a Brooklyn police precinct.",
-                "Comedy",
-                "Progress",
-                false
-            ));
-            MoviesInProgress.Add(new Movie(
-                "Chernobyl",
-                "placeholder_movie_poster.jpg",
-                "A dramatization of the true story of the Chernobyl nuclear disaster.",
-                "Drama",
-                "Progress",
-                false
-            ));
+            MoviesInProgress = new ObservableCollection<Movie>
+            {
+                new Movie(
+                    "Inception",
+                    "placeholder_movie_poster.jpg",
+                    "A mind-bending thriller about dream invasion.",
+                    "Sci-Fi",
+                    "Progress",
+                    false
+                ),
+                new Movie(
+                    "The Dark Knight",
+                    "placeholder_movie_poster.jpg",
+                    "A superhero battles crime in Gotham City.",
+                    "Action",
+                    "Completed",
+                    true
+                ),
+                new Movie(
+                    "Breaking Bad",
+                    "placeholder_movie_poster.jpg",
+                    "A high school teacher turned drug kingpin.",
+                    "Drama",
+                    "Progress",
+                    false
+                ),
+                new Movie(
+                    "Stranger Things",
+                    "placeholder_movie_poster.jpg",
+                    "A group of kids uncover supernatural mysteries.",
+                    "Horror",
+                    "Progress",
+                    false
+                ),
+                new Movie(
+                    "The Matrix",
+                    "placeholder_movie_poster.jpg",
+                    "A computer hacker learns about the true nature of reality.",
+                    "Sci-Fi",
+                    "Progress",
+                    false
+                ),
+                new Movie(
+                    "Game of Thrones",
+                    "placeholder_movie_poster.jpg",
+                    "Noble families vie for control of the Iron Throne.",
+                    "Fantasy",
+                    "Progress",
+                    false
+                ),
+                new Movie(
+                    "The Mandalorian",
+                    "placeholder_movie_poster.jpg",
+                    "A lone bounty hunter in the outer reaches of the galaxy.",
+                    "Sci-Fi",
+                    "Progress",
+                    false
+                ),
+                new Movie(
+                    "Money Heist",
+                    "placeholder_movie_poster.jpg",
+                    "A criminal mastermind plans the biggest heist in history.",
+                    "Thriller",
+                    "Progress",
+                    false
+                ),
+                new Movie(
+                    "The Witcher",
+                    "placeholder_movie_poster.jpg",
+                    "A mutated monster-hunter struggles to find his place in a world.",
+                    "Fantasy",
+                    "Progress",
+                    false
+                ),
+                new Movie(
+                    "Friends",
+                    "placeholder_movie_poster.jpg",
+                    "Follows the personal and professional lives of six friends in New York.",
+                    "Comedy",
+                    "Progress",
+                    false
+                ),
+                new Movie(
+                    "Sherlock",
+                    "placeholder_movie_poster.jpg",
+                    "A modern update finds the famous sleuth and his doctor partner solving crime in 21st century London.",
+                    "Mystery",
+                    "Progress",
+                    false
+                ),
+                new Movie(
+                    "Avatar: The Last Airbender",
+                    "placeholder_movie_poster.jpg",
+                    "A young boy must master all four elements to save the world.",
+                    "Animation",
+                    "Progress",
+                    false
+                ),
+                new Movie(
+                    "House of Cards",
+                    "placeholder_movie_poster.jpg",
+                    "A ruthless politician will stop at nothing to conquer Washington, D.C.",
+                    "Drama",
+                    "Progress",
+                    false
+                ),
+                new Movie(
+                    "Lost",
+                    "placeholder_movie_poster.jpg",
+                    "Survivors of a plane crash struggle to survive on a mysterious island.",
+                    "Adventure",
+                    "Progress",
+                    false
+                ),
+                new Movie(
+                    "The Office",
+                    "placeholder_movie_poster.jpg",
+                    "A mockumentary on a group of typical office workers.",
+                    "Comedy",
+                    "Progress",
+                    false
+                ),
+                new Movie(
+                    "Peaky Blinders",
+                    "placeholder_movie_poster.jpg",
+                    "A gangster family epic set in 1900s England.",
+                    "Crime",
+                    "Progress",
+                    false
+                ),
+                new Movie(
+                    "Black Mirror",
+                    "placeholder_movie_poster.jpg",
+                    "An anthology series exploring a twisted, high-tech world.",
+                    "Sci-Fi",
+                    "Progress",
+                    false
+                ),
+                new Movie(
+                    "Narcos",
+                    "placeholder_movie_poster.jpg",
+                    "A chronicled look at the criminal exploits of Colombian drug lord Pablo Escobar.",
+                    "Crime",
+                    "Progress",
+                    false
+                ),
+                new Movie(
+                    "Vikings",
+                    "placeholder_movie_poster.jpg",
+                    "The adventures of Ragnar Lothbrok, the greatest hero of his age.",
+                    "Action",
+                    "Progress",
+                    false
+                ),
+                new Movie(
+                    "Brooklyn Nine-Nine",
+                    "placeholder_movie_poster.jpg",
+                    "Comedy series following the exploits of a Brooklyn police precinct.",
+                    "Comedy",
+                    "Progress",
+                    false
+                ),
+                new Movie(
+                    "Chernobyl",
+                    "placeholder_movie_poster.jpg",
+                    "A dramatization of the true story of the Chernobyl nuclear disaster.",
+                    "Drama",
+                    "Progress",
+                    false
+                )
+            };
+
+            // Initialize the SelectGenreCommand
+            SelectGenreCommand = new Command<string>(OnGenreSelected);
 
             // Initialize FilteredMovies with all movies
             FilteredMovies = new ObservableCollection<Movie>(MoviesInProgress);
+
             // filter genre
             Genres = new ObservableCollection<string>(
                 MoviesInProgress.Select(m => m.Genre).Distinct().OrderBy(g => g)
-            );
-            Genres.Insert(0, "All");
+            )
+            {
+                "All"
+            };
+
             SelectedGenre = "All";
+            FilterMovies();
         }
 
+        private void OnGenreSelected(string genre)
+        {
+            Debug.WriteLine($"Genre selected: {genre}");
+            SelectedGenre = genre;
+        }
         private void FilterMovies()
         {
             var filtered = MoviesInProgress.AsEnumerable();
@@ -254,7 +270,11 @@ namespace BingeBuddy.ViewModels
             if (!string.IsNullOrWhiteSpace(SelectedGenre) && SelectedGenre != "All")
                 filtered = filtered.Where(m => m.Genre == SelectedGenre);
 
-            FilteredMovies = new ObservableCollection<Movie>(filtered);
+            FilteredMovies.Clear();
+            foreach (var movie in filtered)
+            {
+                FilteredMovies.Add(movie);
+            }
         }
 
         private string newMovieTitle = string.Empty; // Default value

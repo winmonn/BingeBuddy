@@ -17,7 +17,7 @@ namespace BingeBuddy.Pages
 
             string savedUsername = Preferences.Get("SavedUsername", string.Empty);
             string savedPassword = Preferences.Get("SavedPassword", string.Empty);
-
+            App.NavigateToHomePage();   //delete after testing
             if (enteredUsername == savedUsername && enteredPassword == savedPassword)
             {
                 // Successful login

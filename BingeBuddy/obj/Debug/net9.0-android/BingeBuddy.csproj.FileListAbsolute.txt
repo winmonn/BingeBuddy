@@ -2068,3 +2068,13 @@ E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-android\B
 E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-android\BingeBuddy.AssemblyInfo.cs
 E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-android\BingeBuddy.csproj.CoreCompileInputs.cache
 E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-android\BingeBuddy.sourcelink.json
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable\about_icon.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable\appearance_icon.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable\notification_icon.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable\notification_icon2.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable\privacy_icon.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable\profile_icon.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable\settings_icon.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable\support_icon.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable\user_icon.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-android\resizetizer\r\drawable\user_iconw.png

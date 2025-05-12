@@ -1094,3 +1094,35 @@ E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\bin\Debug\net9.0-windows10
 E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\user_iconw.scale-100.png
 E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\profile_icon.scale-100.png
 E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\profile_icon.scale-100.png
+D:\__school\mobdev\bingeb\BingeBuddy\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\placeholder_movie_poster.scale-100.jpg
+D:\__school\mobdev\bingeb\BingeBuddy\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\notification_icon2.scale-100.png
+D:\__school\mobdev\bingeb\BingeBuddy\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\about_icon.scale-100.png
+D:\__school\mobdev\bingeb\BingeBuddy\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\appearance_icon.scale-100.png
+D:\__school\mobdev\bingeb\BingeBuddy\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\privacy_icon.scale-100.png
+D:\__school\mobdev\bingeb\BingeBuddy\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\user_iconw.scale-100.png
+D:\__school\mobdev\bingeb\BingeBuddy\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\user_icon.scale-100.png
+D:\__school\mobdev\bingeb\BingeBuddy\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\notification_icon.scale-100.png
+D:\__school\mobdev\bingeb\BingeBuddy\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\filter.scale-400.png
+D:\__school\mobdev\bingeb\BingeBuddy\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\filter.scale-200.png
+D:\__school\mobdev\bingeb\BingeBuddy\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\filter.scale-150.png
+D:\__school\mobdev\bingeb\BingeBuddy\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\filter.scale-125.png
+D:\__school\mobdev\bingeb\BingeBuddy\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\filter.scale-100.png
+D:\__school\mobdev\bingeb\BingeBuddy\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\support_icon.scale-100.png
+D:\__school\mobdev\bingeb\BingeBuddy\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\settings_icon.scale-100.png
+D:\__school\mobdev\bingeb\BingeBuddy\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\profile_icon.scale-100.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\placeholder_movie_poster.scale-100.jpg
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\notification_icon2.scale-100.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\about_icon.scale-100.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appearance_icon.scale-100.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\privacy_icon.scale-100.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\user_iconw.scale-100.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\user_icon.scale-100.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\notification_icon.scale-100.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\filter.scale-400.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\filter.scale-200.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\filter.scale-150.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\filter.scale-125.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\filter.scale-100.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\support_icon.scale-100.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\settings_icon.scale-100.png
+D:\__school\mobdev\bingeb\BingeBuddy\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\profile_icon.scale-100.png
