@@ -1,3 +1,5 @@
+using Microsoft.Maui.Controls; // Add this namespace
+
 namespace BingeBuddy.Pages
 {
     public partial class NotificationsPage : ContentPage
@@ -8,5 +10,4 @@ namespace BingeBuddy.Pages
             BindingContext = new NotificationsPageViewModel();
         }
     }
-
 }

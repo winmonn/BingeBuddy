@@ -41,62 +41,53 @@ public partial class ProfilePage : ContentPage
         {
             Spacing = 15,
             Children =
+        {
+            new Label
             {
-                new Label
-                {
-                    Text = "Recent Reviews",
-                    FontSize = 16,
-                    FontAttributes = FontAttributes.Bold
-                },
+                Text = "Recent Reviews",
+                FontSize = 16,
+                FontAttributes = FontAttributes.Bold
+            },
 
-                new Frame
+            new Frame
+            {
+                CornerRadius = 12,
+                BorderColor = Colors.LightGray,
+                Padding = 12,
+                Content = new VerticalStackLayout
                 {
-                    CornerRadius = 12,
-                    BorderColor = Colors.LightGray,
-                    Padding = 12,
-                    Content = new VerticalStackLayout
+                    Spacing = 4,
+                    Children =
                     {
-                        Spacing = 4,
-                        Children =
+                        new Label { Text = "The Creator (2023)", FontAttributes = FontAttributes.Bold, FontSize = 14 },
+                        new Label { Text = "Genre: Sci-Fi / Action", FontSize = 12, TextColor = Colors.Gray },
+                        new Label { Text = "★★★★☆", FontSize = 14, TextColor = Colors.Gold },
+                        new Label
                         {
-                            new Label { Text = "The Creator (2023)", FontAttributes = FontAttributes.Bold, FontSize = 14 },
-                            new Label { Text = "Genre: Sci-Fi / Action", FontSize = 12, TextColor = Colors.Gray },
-                            new Label { Text = "★★★★☆", FontSize = 14, TextColor = Colors.Gold },
-                            new Label
-                            {
-                                Text = "\"A cinematic masterpiece with breathtaking visuals and thought-provoking AI narrative.\"",
-                                FontSize = 13,
-                                TextColor = Colors.Black
-                            }
+                            Text = "\"A cinematic masterpiece with breathtaking visuals and thought-provoking AI narrative.\"",
+                            FontSize = 13,
+                            TextColor = Colors.Black
                         }
                     }
-                },
-
-                new Label
-                {
-                    Text = "Recent Lists",
-                    FontSize = 16,
-                    FontAttributes = FontAttributes.Bold,
-                    Margin = new Thickness(0, 10, 0, 0)
-                },
-
-                new Label { Text = "• BEST OF 2024 (SO FARR) – 18 films", FontSize = 13 },
-                new Label { Text = "• Must-Watch Dramas – 42 films", FontSize = 13 },
-
-                // Bind the filtered movies to the UI dynamically
-                new CollectionView
-                {
-                    ItemsSource = ((MovieViewModel)BindingContext).FilteredMovies,
-                    ItemTemplate = new DataTemplate(() =>
-                    {
-                        var movieLabel = new Label();
-                        movieLabel.SetBinding(Label.TextProperty, "Title");
-                        return movieLabel;
-                    })
                 }
-            }
+            },
+
+            new Label
+            {
+                Text = "Recent Lists",
+                FontSize = 16,
+                FontAttributes = FontAttributes.Bold,
+                Margin = new Thickness(0, 10, 0, 0)
+            },
+
+            new Label { Text = "• BEST OF 2024 (SO FARR) – 18 films", FontSize = 13 },
+            new Label { Text = "• Must-Watch Dramas – 42 films", FontSize = 13 }
+
+            // Removed: CollectionView that shows FilteredMovies
+        }
         };
     }
+
 
     private void ShowListsTab()
     {
@@ -199,7 +190,6 @@ public partial class ProfilePage : ContentPage
             })
         };
     }
-
 
 
 
