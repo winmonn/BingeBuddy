@@ -164,7 +164,7 @@
                 </HorizontalStackLayout>
             </Grid>
 
-            <!-- Movie Cards -->
+        <!-- Movie Cards -->
             <CollectionView Grid.Row="4" ItemsSource="{Binding FilteredMovies}">
                 <CollectionView.EmptyView>
                     <Label Text="No movies in your watchlist yet!"

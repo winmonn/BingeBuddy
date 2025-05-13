@@ -109,6 +109,11 @@ namespace BingeBuddy.ViewModels
             }
         }
 
+        public ObservableCollection<Movie> MoviesInList
+        {
+            get => new ObservableCollection<Movie>(MoviesInProgress.Where(m => m.InList));
+        }
+
         // Add these properties to MovieViewModel if you want to edit the selected movie's season/episode/part
         private Movie selectedMovie;
         public Movie SelectedMovie
@@ -169,50 +174,29 @@ namespace BingeBuddy.ViewModels
         public MovieViewModel()
         {
             MoviesInProgress = new ObservableCollection<Movie>
-    {
-        new Movie("Inception", "placeholder_movie_poster.jpg",
-            "Dom Cobb is a skilled thief, the absolute best in the dangerous art of extraction: stealing valuable secrets from deep within the subconscious during the dream state. His rare ability has made him a coveted player in industrial espionage but has also made him a fugitive and cost him everything he loves. Cobb is offered a chance at redemption when he is tasked not with stealing an idea but planting one. If he succeeds, it could be the perfect crime.",
-            "Sci-Fi", "Completed", true),
-
-        new Movie("The Dark Knight", "placeholder_movie_poster.jpg",
-            "With the help of allies Lt. Jim Gordon and DA Harvey Dent, Batman has been keeping a tight lid on crime in Gotham. But a new criminal mastermind known as the Joker emerges, throwing the city into chaos and pushing Batman closer to crossing the fine line between hero and vigilante. The film explores the limits of justice, the psychology of chaos, and the true cost of heroism.",
-            "Action", "Completed", true),
-
-        new Movie("Breaking Bad", "placeholder_movie_poster.jpg",
-            "Walter White, a high school chemistry teacher, is diagnosed with terminal lung cancer. In a desperate bid to secure his family's financial future, he partners with former student Jesse Pinkman to manufacture and sell methamphetamine. As the drug empire grows, so does Walter's descent into darkness, transforming him into the feared and ruthless alter ego, 'Heisenberg'.",
-            "Drama", "Completed", true),
-
-        new Movie("Stranger Things", "placeholder_movie_poster.jpg",
-            "Set in the 1980s, Stranger Things follows a group of young friends in a small town who encounter terrifying supernatural forces and secret government experiments while searching for their missing friend. Along the way, they befriend a mysterious girl with psychokinetic powers, uncover dark alternate dimensions, and battle creatures beyond comprehension.",
-            "Horror", "Progress", false),
-
-        new Movie("The Matrix", "placeholder_movie_poster.jpg",
-            "Thomas Anderson, known in the hacking world as Neo, discovers that reality as he knows it is a simulated construct created by sentient machines to subdue humanity. With the guidance of Morpheus and Trinity, Neo must awaken to his true potential, challenge the illusion, and fight for the liberation of the human race in a mind-bending battle between freedom and control.",
-            "Sci-Fi", "Progress", false),
-
-        new Movie("Game of Thrones", "placeholder_movie_poster.jpg",
-            "In the mythical land of Westeros, noble families vie for power and control of the Iron Throne. Alliances are made and broken as political intrigue, betrayal, and war unfold. Amidst the power struggles, an ancient threat from the North reawakens, threatening all of humanity. Game of Thrones is an epic saga of ambition, loyalty, and the brutal realities of power.",
-            "Fantasy", "Completed", true),
-
-        new Movie("The Mandalorian", "placeholder_movie_poster.jpg",
-            "Set after the fall of the Empire and before the rise of the First Order, this space western follows a lone Mandalorian bounty hunter navigating the lawless galaxy's outer reaches. His mission takes a turn when he encounters a mysterious Force-sensitive child, 'The Child' (Grogu), leading him into conflict with remnants of the Imperial regime and deeper into the Star Wars mythology.",
-            "Sci-Fi", "Progress", false),
-
-        new Movie("Money Heist", "placeholder_movie_poster.jpg",
-            "Led by the enigmatic Professor, a team of eight skilled criminals carries out an ambitious plan to rob the Royal Mint of Spain and print billions of euros. As hostages are held and authorities scramble, the crew must battle internal tensions, law enforcement, and their own identities in a high-stakes psychological drama filled with unexpected twists.",
-            "Thriller", "Progress", false),
-
-        new Movie("The Witcher", "placeholder_movie_poster.jpg",
-            "Geralt of Rivia, a solitary monster hunter with enhanced abilities, struggles to find his place in a world where people are often more wicked than beasts. Bound by destiny to the powerful sorceress Yennefer and a young princess with a dangerous secret, Geralt's journey is one of survival, fate, and fighting against the ever-blurring lines of good and evil.",
-            "Fantasy", "Completed", true),
-
-        new Movie("Friends", "placeholder_movie_poster.jpg",
-            "This beloved sitcom chronicles the personal and professional lives of six friends living in New York City. Through laughter, heartbreak, and life’s ups and downs, Rachel, Ross, Monica, Chandler, Joey, and Phoebe create a bond that feels more like family. Their quirky personalities and memorable moments have made the show a timeless celebration of friendship.",
-            "Comedy", "Progress", false),
-
-        // ... Add similar expanded descriptions for the rest of the movies ...
-    };
-
+            {
+                new Movie("Inception", "placeholder_movie_poster.jpg", "A mind-bending thriller about dream invasion.", "Sci-Fi", "Completed", true, 4, 1, 1, 0, true),
+                new Movie("The Dark Knight", "placeholder_movie_poster.jpg", "A superhero battles crime in Gotham City.", "Action", "Completed", true, 3, 1, 1, 0, true),
+                new Movie("Breaking Bad", "placeholder_movie_poster.jpg", "A high school teacher turned drug kingpin.", "Drama", "Completed", true, 5, 5, 62, 0, true),
+                new Movie("Stranger Things", "placeholder_movie_poster.jpg", "A group of kids uncover supernatural mysteries.", "Horror", "Progress", false, 0, 0, 0, 0, false),
+                new Movie("The Matrix", "placeholder_movie_poster.jpg", "A computer hacker learns about the true nature of reality.", "Sci-Fi", "Progress", false, 0, 0, 0, 0, false),
+                new Movie("Game of Thrones", "placeholder_movie_poster.jpg", "Noble families vie for control of the Iron Throne.", "Fantasy", "Completed", true, 4, 8, 73, 0, true),
+                new Movie("The Mandalorian", "placeholder_movie_poster.jpg", "A lone bounty hunter in the outer reaches of the galaxy.", "Sci-Fi", "Progress", false, 0, 0, 0, 0, false),
+                new Movie("Money Heist", "placeholder_movie_poster.jpg", "A criminal mastermind plans the biggest heist in history.", "Thriller", "Progress", false, 0, 0, 0, 0, true),
+                new Movie("The Witcher", "placeholder_movie_poster.jpg", "A mutated monster-hunter struggles to find his place in a world.", "Fantasy", "Completed", true, 5, 3, 24, 0, true),
+                new Movie("Friends", "placeholder_movie_poster.jpg", "Follows the personal and professional lives of six friends in New York.", "Comedy", "Progress", false, 0, 0, 0, 0, false),
+                new Movie("Sherlock", "placeholder_movie_poster.jpg", "A modern update finds the famous sleuth and his doctor partner solving crime in 21st century London.", "Mystery", "Progress", false, 0, 0, 0, 0, false),
+                new Movie("Avatar: The Last Airbender", "placeholder_movie_poster.jpg", "A young boy must master all four elements to save the world.", "Animation", "Progress", false, 0, 0, 0, 0, false),
+                new Movie("House of Cards", "placeholder_movie_poster.jpg", "A ruthless politician will stop at nothing to conquer Washington, D.C.", "Drama", "Progress", false, 0, 0, 0, 0, false),
+                new Movie("Lost", "placeholder_movie_poster.jpg", "Survivors of a plane crash struggle to survive on a mysterious island.", "Adventure", "Progress", false, 0, 0, 0, 0, false),
+                new Movie("The Office", "placeholder_movie_poster.jpg", "A mockumentary on a group of typical office workers.", "Comedy", "Completed", true, 4, 9, 201, 0, true),
+                new Movie("Peaky Blinders", "placeholder_movie_poster.jpg", "A gangster family epic set in 1900s England.", "Crime", "Progress", false, 0, 0, 0, 0, false),
+                new Movie("Black Mirror", "placeholder_movie_poster.jpg", "An anthology series exploring a twisted, high-tech world.", "Sci-Fi", "Progress", false , 0, 0, 0, 0, true),
+                new Movie("Narcos", "placeholder_movie_poster.jpg", "A chronicled look at the criminal exploits of Colombian drug lord Pablo Escobar.", "Crime", "Progress", false, 0, 0, 0, 0, false),
+                new Movie("Vikings", "placeholder_movie_poster.jpg", "The adventures of Ragnar Lothbrok, the greatest hero of his age.", "Action", "Progress", false, 0, 0, 0, 0, false),
+                new Movie("Brooklyn Nine-Nine", "placeholder_movie_poster.jpg", "Comedy series following the exploits of a Brooklyn police precinct.", "Comedy", "Progress", false, 0, 0, 0, 0, false),
+                new Movie("Chernobyl", "placeholder_movie_poster.jpg", "A dramatization of the true story of the Chernobyl nuclear disaster.", "Drama", "Completed", true, 5, 1, 5, 0, true)
+            };
             SelectGenreCommand = new Command<string>(OnGenreSelected);
             ShowCompletedCommand = new Command(() => StatusFilter = "Completed");
             ShowInProgressCommand = new Command(() => StatusFilter = "Progress");
@@ -238,9 +222,12 @@ namespace BingeBuddy.ViewModels
             SelectedGenre = genre;
         }
 
-        private void FilterMovies()
+        private void FilterMovies(bool onlyInList = false)
         {
             var filtered = MoviesInProgress.AsEnumerable();
+
+            if (onlyInList)
+                filtered = filtered.Where(m => m.InList);
 
             if (!string.IsNullOrWhiteSpace(SearchText))
                 filtered = filtered.Where(m => m.Title.Contains(SearchText, System.StringComparison.OrdinalIgnoreCase));
