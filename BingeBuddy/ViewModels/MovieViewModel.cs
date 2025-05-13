@@ -170,29 +170,28 @@ namespace BingeBuddy.ViewModels
         {
             MoviesInProgress = new ObservableCollection<Movie>
             {
-                new Movie("Inception", "placeholder_movie_poster.jpg", "A mind-bending thriller about dream invasion.", "Sci-Fi", "Completed", true),
-                new Movie("The Dark Knight", "placeholder_movie_poster.jpg", "A superhero battles crime in Gotham City.", "Action", "Completed", true),
-                new Movie("Breaking Bad", "placeholder_movie_poster.jpg", "A high school teacher turned drug kingpin.", "Drama", "Completed", true),
-                new Movie("Stranger Things", "placeholder_movie_poster.jpg", "A group of kids uncover supernatural mysteries.", "Horror", "Progress", false),
-                new Movie("The Matrix", "placeholder_movie_poster.jpg", "A computer hacker learns about the true nature of reality.", "Sci-Fi", "Progress", false),
-                new Movie("Game of Thrones", "placeholder_movie_poster.jpg", "Noble families vie for control of the Iron Throne.", "Fantasy", "Completed", true),
-                new Movie("The Mandalorian", "placeholder_movie_poster.jpg", "A lone bounty hunter in the outer reaches of the galaxy.", "Sci-Fi", "Progress", false),
-                new Movie("Money Heist", "placeholder_movie_poster.jpg", "A criminal mastermind plans the biggest heist in history.", "Thriller", "Progress", false),
-                new Movie("The Witcher", "placeholder_movie_poster.jpg", "A mutated monster-hunter struggles to find his place in a world.", "Fantasy", "Completed", true),
-                new Movie("Friends", "placeholder_movie_poster.jpg", "Follows the personal and professional lives of six friends in New York.", "Comedy", "Progress", false),
-                new Movie("Sherlock", "placeholder_movie_poster.jpg", "A modern update finds the famous sleuth and his doctor partner solving crime in 21st century London.", "Mystery", "Progress", false),
-                new Movie("Avatar: The Last Airbender", "placeholder_movie_poster.jpg", "A young boy must master all four elements to save the world.", "Animation", "Progress", false),
-                new Movie("House of Cards", "placeholder_movie_poster.jpg", "A ruthless politician will stop at nothing to conquer Washington, D.C.", "Drama", "Progress", false),
-                new Movie("Lost", "placeholder_movie_poster.jpg", "Survivors of a plane crash struggle to survive on a mysterious island.", "Adventure", "Progress", false),
-                new Movie("The Office", "placeholder_movie_poster.jpg", "A mockumentary on a group of typical office workers.", "Comedy", "Completed", true),
-                new Movie("Peaky Blinders", "placeholder_movie_poster.jpg", "A gangster family epic set in 1900s England.", "Crime", "Progress", false),
-                new Movie("Black Mirror", "placeholder_movie_poster.jpg", "An anthology series exploring a twisted, high-tech world.", "Sci-Fi", "Progress", false),
-                new Movie("Narcos", "placeholder_movie_poster.jpg", "A chronicled look at the criminal exploits of Colombian drug lord Pablo Escobar.", "Crime", "Progress", false),
-                new Movie("Vikings", "placeholder_movie_poster.jpg", "The adventures of Ragnar Lothbrok, the greatest hero of his age.", "Action", "Progress", false),
-                new Movie("Brooklyn Nine-Nine", "placeholder_movie_poster.jpg", "Comedy series following the exploits of a Brooklyn police precinct.", "Comedy", "Progress", false),
-                new Movie("Chernobyl", "placeholder_movie_poster.jpg", "A dramatization of the true story of the Chernobyl nuclear disaster.", "Drama", "Completed", true)
+                new Movie("Inception", "placeholder_movie_poster.jpg", "A mind-bending thriller about dream invasion.", "Sci-Fi", "Completed", true, 4, 1, 1, 0, true),
+                new Movie("The Dark Knight", "placeholder_movie_poster.jpg", "A superhero battles crime in Gotham City.", "Action", "Completed", true, 3, 1, 1, 0, true),
+                new Movie("Breaking Bad", "placeholder_movie_poster.jpg", "A high school teacher turned drug kingpin.", "Drama", "Completed", true, 5, 5, 62, 0, true),
+                new Movie("Stranger Things", "placeholder_movie_poster.jpg", "A group of kids uncover supernatural mysteries.", "Horror", "Progress", false, 0, 0, 0, 0, false),
+                new Movie("The Matrix", "placeholder_movie_poster.jpg", "A computer hacker learns about the true nature of reality.", "Sci-Fi", "Progress", false, 0, 0, 0, 0, false),
+                new Movie("Game of Thrones", "placeholder_movie_poster.jpg", "Noble families vie for control of the Iron Throne.", "Fantasy", "Completed", true, 4, 8, 73, 0, true),
+                new Movie("The Mandalorian", "placeholder_movie_poster.jpg", "A lone bounty hunter in the outer reaches of the galaxy.", "Sci-Fi", "Progress", false, 0, 0, 0, 0, false),
+                new Movie("Money Heist", "placeholder_movie_poster.jpg", "A criminal mastermind plans the biggest heist in history.", "Thriller", "Progress", false, 0, 0, 0, 0, true),
+                new Movie("The Witcher", "placeholder_movie_poster.jpg", "A mutated monster-hunter struggles to find his place in a world.", "Fantasy", "Completed", true, 5, 3, 24, 0, true),
+                new Movie("Friends", "placeholder_movie_poster.jpg", "Follows the personal and professional lives of six friends in New York.", "Comedy", "Progress", false, 0, 0, 0, 0, false),
+                new Movie("Sherlock", "placeholder_movie_poster.jpg", "A modern update finds the famous sleuth and his doctor partner solving crime in 21st century London.", "Mystery", "Progress", false, 0, 0, 0, 0, false),
+                new Movie("Avatar: The Last Airbender", "placeholder_movie_poster.jpg", "A young boy must master all four elements to save the world.", "Animation", "Progress", false, 0, 0, 0, 0, false),
+                new Movie("House of Cards", "placeholder_movie_poster.jpg", "A ruthless politician will stop at nothing to conquer Washington, D.C.", "Drama", "Progress", false, 0, 0, 0, 0, false),
+                new Movie("Lost", "placeholder_movie_poster.jpg", "Survivors of a plane crash struggle to survive on a mysterious island.", "Adventure", "Progress", false, 0, 0, 0, 0, false),
+                new Movie("The Office", "placeholder_movie_poster.jpg", "A mockumentary on a group of typical office workers.", "Comedy", "Completed", true, 4, 9, 201, 0, true),
+                new Movie("Peaky Blinders", "placeholder_movie_poster.jpg", "A gangster family epic set in 1900s England.", "Crime", "Progress", false, 0, 0, 0, 0, false),
+                new Movie("Black Mirror", "placeholder_movie_poster.jpg", "An anthology series exploring a twisted, high-tech world.", "Sci-Fi", "Progress", false , 0, 0, 0, 0, true),
+                new Movie("Narcos", "placeholder_movie_poster.jpg", "A chronicled look at the criminal exploits of Colombian drug lord Pablo Escobar.", "Crime", "Progress", false, 0, 0, 0, 0, false),
+                new Movie("Vikings", "placeholder_movie_poster.jpg", "The adventures of Ragnar Lothbrok, the greatest hero of his age.", "Action", "Progress", false, 0, 0, 0, 0, false),
+                new Movie("Brooklyn Nine-Nine", "placeholder_movie_poster.jpg", "Comedy series following the exploits of a Brooklyn police precinct.", "Comedy", "Progress", false, 0, 0, 0, 0, false),
+                new Movie("Chernobyl", "placeholder_movie_poster.jpg", "A dramatization of the true story of the Chernobyl nuclear disaster.", "Drama", "Completed", true, 5, 1, 5, 0, true)
             };
-
             SelectGenreCommand = new Command<string>(OnGenreSelected);
             ShowCompletedCommand = new Command(() => StatusFilter = "Completed");
             ShowInProgressCommand = new Command(() => StatusFilter = "Progress");
