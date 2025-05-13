@@ -216,9 +216,12 @@ namespace BingeBuddy.ViewModels
             SelectedGenre = genre;
         }
 
-        private void FilterMovies()
+        private void FilterMovies(bool onlyInList = false)
         {
             var filtered = MoviesInProgress.AsEnumerable();
+
+            if (onlyInList)
+                filtered = filtered.Where(m => m.InList);
 
             if (!string.IsNullOrWhiteSpace(SearchText))
                 filtered = filtered.Where(m => m.Title.Contains(SearchText, System.StringComparison.OrdinalIgnoreCase));
