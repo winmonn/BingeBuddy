@@ -57,10 +57,13 @@
             <!-- Footer Links -->
             <!-- Footer Links -->
             <VerticalStackLayout HorizontalOptions="Center" Spacing="5">
-                <Label Text="Forgot Password?" 
-                    FontSize="14" 
-                    TextColor="Gray"
-                    HorizontalOptions="Center" />
+                <Button Text="Forgot Password?" 
+                FontSize="14" 
+                TextColor="Gray" 
+                BackgroundColor="Transparent"
+                HorizontalOptions="Center"
+                Clicked="OnForgotPasswordClicked" />
+
                 <Button Text="New to BingeBuddy? Sign Up" 
                     FontSize="14" 
                     TextColor="Gray" 

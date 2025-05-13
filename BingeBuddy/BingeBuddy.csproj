@@ -79,6 +79,9 @@
 	  <MauiXaml Update="Pages\AddMoviePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Pages\LoginPage - Copy.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\MovieDetailsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -128,6 +131,14 @@
 	  <None Update="Pages\RegistrationPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EditorConfigFiles Remove="E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\Pages\.editorconfig" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="E:\USC\2ND YEAR\2ND SEM\Mob Dev\BingeBuddy\BingeBuddy\Pages\.editorconfig" />
 	</ItemGroup>
 
 </Project>
