@@ -1,27 +1,41 @@
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+
 namespace BingeBuddy.Models
 {
-    public class Movie
+    public class Movie : INotifyPropertyChanged
     {
-        // Movie Title
         public string Title { get; set; } = string.Empty;
-
-        // Movie Description
         public string Description { get; set; } = string.Empty;
-
-        // Movie Category (e.g., "Progress", "Completed")
         public string Category { get; set; } = "Progress";
-
-        // Whether the movie has been watched
         public bool Watched { get; set; } = false;
-
-        // Thumbnail or Cover Photo Path
         public string CoverPhoto { get; set; } = string.Empty;
-
-        // Movie Genre (e.g., "Action", "Drama")
         public string Genre { get; set; } = string.Empty;
 
-        // Constructor for convenience
-        public Movie(string title, string coverPhoto, string description = "", string genre = "", string category = "Progress", bool watched = false)
+        private int rating;
+        public int Rating
+        {
+            get => rating;
+            set
+            {
+                if (rating != value)
+                {
+                    rating = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        // Method to update rating and notify change
+        public void UpdateRating(int newRating)
+        {
+            if (Rating != newRating)
+            {
+                Rating = newRating;
+            }
+        }
+
+        public Movie(string title, string coverPhoto, string description = "", string genre = "", string category = "Progress", bool watched = false, int rating = 0)
         {
             Title = title;
             CoverPhoto = coverPhoto;
@@ -29,12 +43,18 @@ namespace BingeBuddy.Models
             Genre = genre;
             Category = category;
             Watched = watched;
+            Rating = rating;
         }
 
-        // Method to Display Movie Details (Optional)
         public override string ToString()
         {
             return $"{Title} - {Genre}";
+        }
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+        protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

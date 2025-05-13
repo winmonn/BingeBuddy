@@ -1,0 +1,45 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BingeBuddy.Pages.MovieDetailsPage"
+             BackgroundColor="#2C3E50"
+             Title="Movie Details">
+    
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="20">
+            <!-- Movie Cover Image -->
+            <Image Source="{Binding CoverPhoto}" HeightRequest="220" Aspect="AspectFill" HorizontalOptions="Center"/>
+
+            <!-- Movie Title -->
+            <Label Text="{Binding Title}" FontSize="28" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center"/>
+
+            <!-- Movie Description -->
+            <Label Text="{Binding Description}" FontSize="16" TextColor="White" />
+
+            <!-- Rating Section -->
+            <Label Text="Your Rating:" FontSize="18" TextColor="White" Margin="0,20,0,0"/>
+            <HorizontalStackLayout Spacing="8">
+                <Button Text="★" FontSize="28" 
+            Command="{Binding RateCommand}" CommandParameter="1"
+            TextColor="{Binding Rating, Converter={StaticResource StarColorConverter}, ConverterParameter=1}"
+            BackgroundColor="Transparent"/>
+                <Button Text="★" FontSize="28" 
+            Command="{Binding RateCommand}" CommandParameter="2"
+            TextColor="{Binding Rating, Converter={StaticResource StarColorConverter}, ConverterParameter=2}"
+            BackgroundColor="Transparent"/>
+                <Button Text="★" FontSize="28" 
+            Command="{Binding RateCommand}" CommandParameter="3"
+            TextColor="{Binding Rating, Converter={StaticResource StarColorConverter}, ConverterParameter=3}"
+            BackgroundColor="Transparent"/>
+                <Button Text="★" FontSize="28" 
+            Command="{Binding RateCommand}" CommandParameter="4"
+            TextColor="{Binding Rating, Converter={StaticResource StarColorConverter}, ConverterParameter=4}"
+            BackgroundColor="Transparent"/>
+                <Button Text="★" FontSize="28" 
+            Command="{Binding RateCommand}" CommandParameter="5"
+            TextColor="{Binding Rating, Converter={StaticResource StarColorConverter}, ConverterParameter=5}"
+            BackgroundColor="Transparent"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
