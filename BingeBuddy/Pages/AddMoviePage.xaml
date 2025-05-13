@@ -125,7 +125,7 @@
 
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer
-                         Command="{Binding BindingContext.ShowMovieDetailsCommand, Source={x:Reference HomePageRoot}}"
+                         Command="{Binding BindingContext.ShowMovieDetailsCommand, Source={x:Reference AddMoviePageRoot}}"
                          CommandParameter="{Binding .}" />
                         </Frame.GestureRecognizers>
                     </Frame>

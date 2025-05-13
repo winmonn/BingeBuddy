@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using BingeBuddy.Pages;
+using BingeBuddy.ViewModels;
 
 namespace BingeBuddy
 {
@@ -26,7 +27,7 @@ namespace BingeBuddy
             builder.Services.AddSingleton<NotificationsPage>();
             builder.Services.AddSingleton<ProfilePage>();
             builder.Services.AddSingleton<SettingsPage>();
-
+            builder.Services.AddSingleton<MovieViewModel>();
             return builder.Build();
         }
     }

@@ -1,10 +1,13 @@
+using BingeBuddy.ViewModels;
+
 namespace BingeBuddy.Pages
 {
     public partial class HomePage : ContentPage
     {
-        public HomePage()
+        public HomePage(MovieViewModel viewModel)
         {
             InitializeComponent();
+            BindingContext = viewModel;
         }
 
         // When the Profile button is clicked, navigate to the ProfilePage
