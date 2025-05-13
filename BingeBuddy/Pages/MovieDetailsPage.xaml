@@ -5,64 +5,145 @@
              Title="Movie Details">
 
     <ScrollView>
-        <VerticalStackLayout Spacing="20" Padding="20">
+        <VerticalStackLayout Spacing="24" Padding="20">
+
             <!-- Movie Cover Image -->
-            <Image Source="{Binding CoverPhoto}" HeightRequest="220" Aspect="AspectFill" HorizontalOptions="Center"/>
+            <Frame CornerRadius="20" HasShadow="True" Padding="0" BackgroundColor="#1F2A38"
+                   BorderColor="#34495E">
+                <Image Source="{Binding CoverPhoto}"
+                       HeightRequest="220"
+                       Aspect="AspectFill"
+                       HorizontalOptions="Fill"
+                       VerticalOptions="Fill"/>
+            </Frame>
 
             <!-- Movie Title -->
-            <Label Text="{Binding Title}" FontSize="28" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center"/>
+            <Label Text="{Binding Title}"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   FontFamily="Arial" />
+
+            <!-- Genre Tags -->
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Label Text="Action" BackgroundColor="#3E556E" TextColor="White" Padding="12,6"  />
+                <Label Text="Adventure" BackgroundColor="#3E556E" TextColor="White" Padding="12,6"  />
+                <Label Text="Sci-Fi" BackgroundColor="#3E556E" TextColor="White" Padding="12,6"  />
+            </HorizontalStackLayout>
 
             <!-- Movie Description -->
-            <Label Text="{Binding Description}" FontSize="16" TextColor="White" />
+            <Frame BackgroundColor="#1F2A38" Padding="20" CornerRadius="20" HasShadow="True">
+                <Label Text="{Binding Description}"
+                       FontSize="16"
+                       TextColor="White"
+                       LineBreakMode="WordWrap"
+                       FontFamily="Georgia"/>
+            </Frame>
 
             <!-- Rating Section -->
-            <Label Text="Your Rating:" FontSize="18" TextColor="White" Margin="0,20,0,0"/>
-            <HorizontalStackLayout Spacing="8">
-                <Button Text="★" FontSize="28" 
+            <Label Text="Your Rating:"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   Margin="0,10,0,0" />
+
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Button Text="★" FontSize="30"
                         Command="{Binding RateCommand}" CommandParameter="1"
                         TextColor="{Binding Rating, Converter={StaticResource StarColorConverter}, ConverterParameter=1}"
                         BackgroundColor="Transparent"/>
-                <Button Text="★" FontSize="28" 
+                <Button Text="★" FontSize="30"
                         Command="{Binding RateCommand}" CommandParameter="2"
                         TextColor="{Binding Rating, Converter={StaticResource StarColorConverter}, ConverterParameter=2}"
                         BackgroundColor="Transparent"/>
-                <Button Text="★" FontSize="28" 
+                <Button Text="★" FontSize="30"
                         Command="{Binding RateCommand}" CommandParameter="3"
                         TextColor="{Binding Rating, Converter={StaticResource StarColorConverter}, ConverterParameter=3}"
                         BackgroundColor="Transparent"/>
-                <Button Text="★" FontSize="28" 
+                <Button Text="★" FontSize="30"
                         Command="{Binding RateCommand}" CommandParameter="4"
                         TextColor="{Binding Rating, Converter={StaticResource StarColorConverter}, ConverterParameter=4}"
                         BackgroundColor="Transparent"/>
-                <Button Text="★" FontSize="28" 
+                <Button Text="★" FontSize="30"
                         Command="{Binding RateCommand}" CommandParameter="5"
                         TextColor="{Binding Rating, Converter={StaticResource StarColorConverter}, ConverterParameter=5}"
                         BackgroundColor="Transparent"/>
             </HorizontalStackLayout>
 
-            <!-- Tracker Section for Season, Episode, and Part -->
-            <Label Text="Track Progress:" FontSize="18" TextColor="White" Margin="0,20,0,0"/>
+            <!-- Watch Progress -->
+            <Label Text="Watch Progress"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   TextColor="White" />
+            <ProgressBar Progress="{Binding Progress}" 
+                         HeightRequest="10" 
+                         BackgroundColor="#3B4C5A" 
+                         ProgressColor="#2ECC71"
+                         Margin="0,0,0,10" />
 
-            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
-                <Label Text="Season:" TextColor="White"/>
-                <Entry Text="{Binding Season, Mode=TwoWay}" Keyboard="Numeric" TextColor="White" BackgroundColor="#22313A"/>
+            <!-- Tracker Section -->
+            <Label Text="Track Progress:"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   Margin="0,20,0,0" />
 
-                <Label Text="Episode:" TextColor="White"/>
-                <Entry Text="{Binding Episode, Mode=TwoWay}" Keyboard="Numeric" TextColor="White" BackgroundColor="#22313A"/>
+            <Frame BackgroundColor="#1F2A38" Padding="15" CornerRadius="15" HasShadow="True">
+                <HorizontalStackLayout Spacing="20" HorizontalOptions="Center">
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="Season:" TextColor="White" FontSize="14"/>
+                        <Entry Text="{Binding Season, Mode=TwoWay}"
+                               Keyboard="Numeric"
+                               TextColor="White"
+                               BackgroundColor="#22313A"
+                               WidthRequest="70"
+                               />
+                    </VerticalStackLayout>
 
-                <Label Text="Part:" TextColor="White"/>
-                <Entry Text="{Binding Part, Mode=TwoWay}" Keyboard="Numeric" TextColor="White" BackgroundColor="#22313A"/>
-            </HorizontalStackLayout>
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="Episode:" TextColor="White" FontSize="14"/>
+                        <Entry Text="{Binding Episode, Mode=TwoWay}"
+                               Keyboard="Numeric"
+                               TextColor="White"
+                               BackgroundColor="#22313A"
+                               WidthRequest="70"
+                               />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="Part:" TextColor="White" FontSize="14"/>
+                        <Entry Text="{Binding Part, Mode=TwoWay}"
+                               Keyboard="Numeric"
+                               TextColor="White"
+                               BackgroundColor="#22313A"
+                               WidthRequest="70"
+                               />
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+            </Frame>
 
             <!-- Update Tracker Button -->
-            <Button Text="Update Tracker" 
-                    Command="{Binding UpdateTrackerCommand}" 
-                    BackgroundColor="#2980B9" 
-                    TextColor="White" 
-                    CornerRadius="10"
+            <Button Text="📌 Update Tracker"
+                    Command="{Binding UpdateTrackerCommand}"
+                    BackgroundColor="#3498DB"
+                    TextColor="White"
+                    CornerRadius="20"
+                    FontSize="16"
+                    FontAttributes="Bold"
+                    HeightRequest="50"
                     Margin="0,20,0,0"/>
 
+            <!-- Trailer Button -->
+            <Button Text="🎬 Watch Trailer"
+                    Command="{Binding WatchTrailerCommand}"
+                    BackgroundColor="#E74C3C"
+                    TextColor="White"
+                    CornerRadius="20"
+                    FontSize="16"
+                    FontAttributes="Bold"
+                    HeightRequest="50"/>
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>
