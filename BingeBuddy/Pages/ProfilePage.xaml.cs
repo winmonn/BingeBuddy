@@ -1,5 +1,6 @@
 using Microsoft.Maui.Controls;
-using Microsoft.Maui.Graphics;
+using BingeBuddy.ViewModels;
+using Microsoft.Maui.Controls.Shapes;
 
 namespace BingeBuddy.Pages;
 
@@ -8,6 +9,7 @@ public partial class ProfilePage : ContentPage
     public ProfilePage()
     {
         InitializeComponent();
+        BindingContext = new MovieViewModel();  // Bind the page to the MovieViewModel
         ShowActivityTab(); // Default tab
     }
 
@@ -79,7 +81,19 @@ public partial class ProfilePage : ContentPage
                 },
 
                 new Label { Text = "• BEST OF 2024 (SO FARR) – 18 films", FontSize = 13 },
-                new Label { Text = "• Must-Watch Dramas – 42 films", FontSize = 13 }
+                new Label { Text = "• Must-Watch Dramas – 42 films", FontSize = 13 },
+
+                // Bind the filtered movies to the UI dynamically
+                new CollectionView
+                {
+                    ItemsSource = ((MovieViewModel)BindingContext).FilteredMovies,
+                    ItemTemplate = new DataTemplate(() =>
+                    {
+                        var movieLabel = new Label();
+                        movieLabel.SetBinding(Label.TextProperty, "Title");
+                        return movieLabel;
+                    })
+                }
             }
         };
     }
@@ -97,14 +111,97 @@ public partial class ProfilePage : ContentPage
 
     private void ShowFilmsTab()
     {
-        TabContent.Content = new VerticalStackLayout
+        if (BindingContext is MovieViewModel vm)
         {
-            Children =
+            vm.StatusFilter = "Completed";
+        }
+
+        TabContent.Content = new CollectionView
+        {
+            Margin = new Thickness(10),
+            ItemsSource = ((MovieViewModel)BindingContext).FilteredMovies,
+            ItemTemplate = new DataTemplate(() =>
             {
-                new Label { Text = "Rated / Watched Films section...", FontSize = 14 }
-            }
+                var border = new Border
+                {
+                    Padding = 15,
+                    Margin = new Thickness(0, 10),
+                    BackgroundColor = Color.FromArgb("#FFFFFF"),
+                    StrokeShape = new RoundRectangle { CornerRadius = 12 },
+                    Shadow = new Shadow
+                    {
+                        Brush = Colors.Black,
+                        Opacity = 0.2f,
+                        Offset = new Point(3, 3),
+                        Radius = 5
+                    }
+                };
+
+                var grid = new Grid
+                {
+                    ColumnDefinitions =
+                {
+                    new ColumnDefinition { Width = GridLength.Auto },
+                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) },
+                    new ColumnDefinition { Width = GridLength.Auto }
+                },
+                    RowDefinitions =
+                {
+                    new RowDefinition { Height = GridLength.Auto },
+                    new RowDefinition { Height = GridLength.Auto },
+                    new RowDefinition { Height = GridLength.Auto }
+                },
+                    ColumnSpacing = 10
+                };
+
+                var poster = new Image
+                {
+                    HeightRequest = 60,
+                    WidthRequest = 40,
+                    Aspect = Aspect.AspectFill
+                };
+                poster.SetBinding(Image.SourceProperty, "Poster"); // Ensure this exists in your Movie model
+
+                var titleLabel = new Label
+                {
+                    FontSize = 16,
+                    FontAttributes = FontAttributes.Bold,
+                    TextColor = Color.FromArgb("#333")
+                };
+                titleLabel.SetBinding(Label.TextProperty, "Title");
+
+                var genreLabel = new Label
+                {
+                    FontSize = 13,
+                    TextColor = Color.FromArgb("#666")
+                };
+                genreLabel.SetBinding(Label.TextProperty, "Genre");
+
+                var ratingLabel = new Label
+                {
+                    FontSize = 14,
+                    TextColor = Colors.Gold,
+                    FontAttributes = FontAttributes.Bold,
+                    HorizontalOptions = LayoutOptions.Start
+                };
+                ratingLabel.SetBinding(Label.TextProperty, "Rating"); // e.g. ★★★★☆
+
+                // Grid placement
+                grid.Add(poster, 0, 0);
+                Grid.SetRowSpan(poster, 3);
+
+                grid.Add(titleLabel, 1, 0);
+                grid.Add(genreLabel, 1, 1);
+                grid.Add(ratingLabel, 1, 2);
+
+                border.Content = grid;
+                return border;
+            })
         };
     }
+
+
+
 
     private void ShowWatchLaterTab()
     {
@@ -117,4 +214,3 @@ public partial class ProfilePage : ContentPage
         };
     }
 }
-    
