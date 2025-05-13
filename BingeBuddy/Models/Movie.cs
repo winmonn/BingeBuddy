@@ -8,6 +8,7 @@ namespace BingeBuddy.Models
         private int _season;
         private int _episode;
         private int _part;
+        private bool _inList;
         public string Title { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
         public string Category { get; set; } = "Progress";
@@ -67,6 +68,19 @@ namespace BingeBuddy.Models
             }
         }
 
+        public bool InList
+        {
+            get => _inList;
+            set
+            {
+                if (_inList != value)
+                {
+                    _inList = value;
+                    OnPropertyChanged(nameof(InList));
+                }
+            }
+        }
+
         // Method to update rating and notify change
         public void UpdateRating(int newRating)
         {
@@ -98,7 +112,7 @@ namespace BingeBuddy.Models
         }
 
 
-        public Movie(string title, string coverPhoto, string description = "", string genre = "", string category = "Progress", bool watched = false, int rating = 0, int season=0,int episode=0, int part=0 )
+        public Movie(string title, string coverPhoto, string description = "", string genre = "", string category = "Progress", bool watched = false, int rating = 0, int season=0,int episode=0, int part=0, bool inList = false)
         {
             Title = title;
             CoverPhoto = coverPhoto;
@@ -110,6 +124,7 @@ namespace BingeBuddy.Models
             Season = season;
             Episode = episode;
             Part = part;
+            InList = inList;
         }
 
         public override string ToString()
