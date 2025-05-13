@@ -1,5 +1,6 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:BingeBuddy.Converters"
              x:Class="BingeBuddy.Pages.MovieDetailsPage"
              BackgroundColor="#0b0c0e"
              Title="Movie Details">
@@ -15,15 +16,22 @@
                        HorizontalOptions="Fill"
                        VerticalOptions="Fill"/>
             </Frame>
-
-            <!-- Movie Title -->
-            <Label Text="{Binding Title}"
-                   FontSize="32"
-                   FontAttributes="Bold"
-                   TextColor="White"
-                   HorizontalOptions="Center"
-                   HorizontalTextAlignment="Center"
-                   FontFamily="Arial" />
+            
+            <!-- Movie Title with Bookmark -->
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="8">
+                <Label Text="{Binding Title}"
+                       FontSize="32"
+                       FontAttributes="Bold"
+                       TextColor="White"
+                       HorizontalTextAlignment="Center"
+                       FontFamily="Arial" />
+                <ImageButton
+                    Source="{Binding Movie.InList, Converter={StaticResource InListToBookmarkImageConverter}}"
+                    HeightRequest="32"
+                    WidthRequest="32"
+                    BackgroundColor="Transparent"
+                    Command="{Binding ToggleInListCommand}" />
+            </HorizontalStackLayout>
 
             <!-- Genre Tags -->
             <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">

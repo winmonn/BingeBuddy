@@ -45,18 +45,27 @@ namespace BingeBuddy.ViewModels
 
         public ICommand RateCommand { get; }
         public ICommand UpdateTrackerCommand { get; }
+        public ICommand ToggleInListCommand { get; }
 
         public MovieDetailsViewModel(Movie movie)
         {
             Movie = movie;
             RateCommand = new Command<object>(OnRate);
             UpdateTrackerCommand = new Command(OnUpdateTracker);
-
+            ToggleInListCommand = new Command(ToggleInList);
             Movie.PropertyChanged += (s, e) =>
             {
                 if (e.PropertyName == nameof(Movie.Rating))
                     OnPropertyChanged(nameof(Rating));
             };
+        }
+
+        private void ToggleInList()
+        {
+            if (Movie != null)
+            {
+                Movie.InList = !Movie.InList;
+            }
         }
 
         private void OnRate(object value)
