@@ -109,6 +109,11 @@ namespace BingeBuddy.ViewModels
             }
         }
 
+        public ObservableCollection<Movie> MoviesInList
+        {
+            get => new ObservableCollection<Movie>(MoviesInProgress.Where(m => m.InList));
+        }
+
         // Add these properties to MovieViewModel if you want to edit the selected movie's season/episode/part
         private Movie selectedMovie;
         public Movie SelectedMovie
