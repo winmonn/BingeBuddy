@@ -1,15 +1,23 @@
 using Microsoft.Maui.Controls;
-using BingeBuddy.ViewModels;
 using Microsoft.Maui.Controls.Shapes;
+using BingeBuddy.ViewModels;
+using System.Text.Json;
+using System.Collections.ObjectModel;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace BingeBuddy.Pages;
 
 public partial class ProfilePage : ContentPage
 {
+    private ObservableCollection<UserList> userLists = new();
+    private readonly string listsFilePath = Path.Combine(FileSystem.AppDataDirectory, "userLists.json");
+
     public ProfilePage()
     {
         InitializeComponent();
-        BindingContext = new MovieViewModel();  // Bind the page to the MovieViewModel
+        BindingContext = new MovieViewModel();
+        LoadUserLists(); // Load lists from local storage
         ShowActivityTab(); // Default tab
     }
 
@@ -35,70 +43,183 @@ public partial class ProfilePage : ContentPage
         }
     }
 
+    // =========================
+    // Activity Tab
+    // =========================
+
     private void ShowActivityTab()
     {
         TabContent.Content = new VerticalStackLayout
         {
             Spacing = 15,
             Children =
-        {
-            new Label
             {
-                Text = "Recent Reviews",
-                FontSize = 16,
-                FontAttributes = FontAttributes.Bold
-            },
+                new Label { Text = "Recent Reviews", FontSize = 16, FontAttributes = FontAttributes.Bold },
 
-            new Frame
+                new Frame
+                {
+                    CornerRadius = 12,
+                    BorderColor = Colors.LightGray,
+                    Padding = 12,
+                    Content = new VerticalStackLayout
+                    {
+                        Spacing = 4,
+                        Children =
+                        {
+                            new Label { Text = "The Creator (2023)", FontAttributes = FontAttributes.Bold, FontSize = 14 },
+                            new Label { Text = "Genre: Sci-Fi / Action", FontSize = 12, TextColor = Colors.Gray },
+                            new Label { Text = "★★★★☆", FontSize = 14, TextColor = Colors.Gold },
+                            new Label
+                            {
+                                Text = "\"A cinematic masterpiece with breathtaking visuals and thought-provoking AI narrative.\"",
+                                FontSize = 13,
+                                TextColor = Colors.Black
+                            }
+                        }
+                    }
+                },
+
+                new Label { Text = "Recent Lists", FontSize = 16, FontAttributes = FontAttributes.Bold, Margin = new Thickness(0, 10, 0, 0) },
+
+                new Label { Text = "• BEST OF 2024 (SO FARR) – 18 films", FontSize = 13 },
+                new Label { Text = "• Must-Watch Dramas – 42 films", FontSize = 13 }
+            }
+        };
+    }
+
+    // =========================
+    // Lists Tab
+    // =========================
+
+    private void ShowListsTab()
+    {
+        var stack = new VerticalStackLayout { Padding = new Thickness(10), Spacing = 10 };
+
+        var addButton = new Button
+        {
+            Text = "➕ Create New List",
+            BackgroundColor = Colors.LightGray,
+            TextColor = Colors.Black,
+            CornerRadius = 12,
+            Padding = 10,
+            FontAttributes = FontAttributes.Bold
+        };
+        addButton.Clicked += OnCreateListClicked;
+        stack.Children.Add(addButton);
+
+        foreach (var list in userLists)
+        {
+            var frame = new Frame
             {
-                CornerRadius = 12,
-                BorderColor = Colors.LightGray,
                 Padding = 12,
+                CornerRadius = 10,
+                BorderColor = Colors.LightGray,
                 Content = new VerticalStackLayout
                 {
                     Spacing = 4,
                     Children =
                     {
-                        new Label { Text = "The Creator (2023)", FontAttributes = FontAttributes.Bold, FontSize = 14 },
-                        new Label { Text = "Genre: Sci-Fi / Action", FontSize = 12, TextColor = Colors.Gray },
-                        new Label { Text = "★★★★☆", FontSize = 14, TextColor = Colors.Gold },
-                        new Label
+                        new Label { Text = list.Title, FontSize = 15, FontAttributes = FontAttributes.Bold },
+                        new Label { Text = $"{list.FilmCount} films", FontSize = 13, TextColor = Colors.Gray },
+                        new HorizontalStackLayout
                         {
-                            Text = "\"A cinematic masterpiece with breathtaking visuals and thought-provoking AI narrative.\"",
-                            FontSize = 13,
-                            TextColor = Colors.Black
+                            Spacing = 10,
+                            Children =
+                            {
+                                new Button
+                                {
+                                    Text = "✏️ Edit",
+                                    FontSize = 12,
+                                    BackgroundColor = Colors.Transparent,
+                                    TextColor = Colors.Blue,
+                                    Command = new Command(async () => await EditListAsync(list))
+                                },
+                                new Button
+                                {
+                                    Text = "🗑 Delete",
+                                    FontSize = 12,
+                                    BackgroundColor = Colors.Transparent,
+                                    TextColor = Colors.Red,
+                                    Command = new Command(async () => await DeleteListAsync(list))
+                                }
+                            }
                         }
                     }
                 }
-            },
-
-            new Label
-            {
-                Text = "Recent Lists",
-                FontSize = 16,
-                FontAttributes = FontAttributes.Bold,
-                Margin = new Thickness(0, 10, 0, 0)
-            },
-
-            new Label { Text = "• BEST OF 2024 (SO FARR) – 18 films", FontSize = 13 },
-            new Label { Text = "• Must-Watch Dramas – 42 films", FontSize = 13 }
-
-            // Removed: CollectionView that shows FilteredMovies
+            };
+            stack.Children.Add(frame);
         }
-        };
+
+        TabContent.Content = new ScrollView { Content = stack };
     }
 
-
-    private void ShowListsTab()
+    private async void OnCreateListClicked(object sender, EventArgs e)
     {
-        TabContent.Content = new VerticalStackLayout
+        string title = await DisplayPromptAsync("New List", "Enter list title:");
+        if (!string.IsNullOrWhiteSpace(title))
         {
-            Children =
-            {
-                new Label { Text = "User-created lists go here...", FontSize = 14 }
-            }
-        };
+            userLists.Insert(0, new UserList { Title = title, FilmCount = 0 });
+            await SaveUserListsAsync();
+            ShowListsTab();
+        }
     }
+
+    private async Task EditListAsync(UserList list)
+    {
+        string newTitle = await DisplayPromptAsync("Edit List", "Edit list title:", initialValue: list.Title);
+        if (!string.IsNullOrWhiteSpace(newTitle))
+        {
+            list.Title = newTitle;
+            await SaveUserListsAsync();
+            ShowListsTab();
+        }
+    }
+
+    private async Task DeleteListAsync(UserList list)
+    {
+        bool confirm = await DisplayAlert("Delete List", $"Are you sure you want to delete '{list.Title}'?", "Yes", "Cancel");
+        if (confirm)
+        {
+            userLists.Remove(list);
+            await SaveUserListsAsync();
+            ShowListsTab();
+        }
+    }
+
+    private async Task SaveUserListsAsync()
+    {
+        try
+        {
+            var json = JsonSerializer.Serialize(userLists);
+            await File.WriteAllTextAsync(listsFilePath, json);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error saving lists: " + ex.Message);
+        }
+    }
+
+    private void LoadUserLists()
+    {
+        try
+        {
+            if (File.Exists(listsFilePath))
+            {
+                var json = File.ReadAllText(listsFilePath);
+                var loaded = JsonSerializer.Deserialize<ObservableCollection<UserList>>(json);
+                if (loaded != null)
+                    userLists = loaded;
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error loading lists: " + ex.Message);
+        }
+    }
+
+    // =========================
+    // Films Tab
+    // =========================
 
     private void ShowFilmsTab()
     {
@@ -131,17 +252,17 @@ public partial class ProfilePage : ContentPage
                 var grid = new Grid
                 {
                     ColumnDefinitions =
-                {
-                    new ColumnDefinition { Width = GridLength.Auto },
-                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) },
-                    new ColumnDefinition { Width = GridLength.Auto }
-                },
+                    {
+                        new ColumnDefinition { Width = GridLength.Auto },
+                        new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) },
+                        new ColumnDefinition { Width = GridLength.Auto }
+                    },
                     RowDefinitions =
-                {
-                    new RowDefinition { Height = GridLength.Auto },
-                    new RowDefinition { Height = GridLength.Auto },
-                    new RowDefinition { Height = GridLength.Auto }
-                },
+                    {
+                        new RowDefinition { Height = GridLength.Auto },
+                        new RowDefinition { Height = GridLength.Auto },
+                        new RowDefinition { Height = GridLength.Auto }
+                    },
                     ColumnSpacing = 10
                 };
 
@@ -151,7 +272,7 @@ public partial class ProfilePage : ContentPage
                     WidthRequest = 40,
                     Aspect = Aspect.AspectFill
                 };
-                poster.SetBinding(Image.SourceProperty, "Poster"); // Ensure this exists in your Movie model
+                poster.SetBinding(Image.SourceProperty, "Poster");
 
                 var titleLabel = new Label
                 {
@@ -175,12 +296,10 @@ public partial class ProfilePage : ContentPage
                     FontAttributes = FontAttributes.Bold,
                     HorizontalOptions = LayoutOptions.Start
                 };
-                ratingLabel.SetBinding(Label.TextProperty, "Rating"); // e.g. ★★★★☆
+                ratingLabel.SetBinding(Label.TextProperty, "Rating");
 
-                // Grid placement
                 grid.Add(poster, 0, 0);
                 Grid.SetRowSpan(poster, 3);
-
                 grid.Add(titleLabel, 1, 0);
                 grid.Add(genreLabel, 1, 1);
                 grid.Add(ratingLabel, 1, 2);
@@ -191,7 +310,9 @@ public partial class ProfilePage : ContentPage
         };
     }
 
-
+    // =========================
+    // Watch Later Tab
+    // =========================
 
     private void ShowWatchLaterTab()
     {
@@ -203,4 +324,14 @@ public partial class ProfilePage : ContentPage
             }
         };
     }
+}
+
+// =========================
+// UserList model
+// =========================
+
+public class UserList
+{
+    public string Title { get; set; }
+    public int FilmCount { get; set; }
 }
