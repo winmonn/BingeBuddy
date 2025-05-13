@@ -1,48 +1,52 @@
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"  
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"  
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
              x:Class="BingeBuddy.Pages.AddMoviePage"
              x:Name="AddMoviePageRoot"
              xmlns:local="clr-namespace:BingeBuddy.Pages"
              BackgroundColor="#2C3E50">
     <Grid RowDefinitions="Auto,Auto,Auto,*">
-        <!-- Search Bar with Filter Icon -->
-        <Grid Grid.Row="0" ColumnDefinitions="*,Auto" Margin="10">
-            <SearchBar Grid.Column="0"
-                   Placeholder="Search movies..." 
-                   Text="{Binding SearchText}" 
-                   TextColor="White" 
-                   PlaceholderColor="Gray" 
-                   BackgroundColor="#1F2A38" />
-            <ImageButton Grid.Column="1"
-                     Source="filter.svg"
-                     HeightRequest="20"
-                     WidthRequest="20"
-                     Margin="5,0,0,0"
-                     VerticalOptions="Center"
-                     HorizontalOptions="End"
-                     CornerRadius="20"
-                     BackgroundColor="Transparent"
-                     Clicked="OnFilterClicked"/>
+        <!-- Top Bar -->
+        <Grid Grid.Row="0"
+              Padding="5"
+              HeightRequest="60"
+              ColumnDefinitions="Auto,*"
+              VerticalOptions="Center">
+            <Image Source="logo.png"
+                    HeightRequest="40"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Start" />
+            <SearchBar Grid.Column="1"
+                        Placeholder="Search"
+                        Text="{Binding SearchText}"
+                        BackgroundColor="#22313A"
+                        TextColor="White"
+                        PlaceholderColor="#B0B0B0"
+                        HeightRequest="40"
+                        Margin="10,0,0,0"
+                        HorizontalOptions="FillAndExpand" />
         </Grid>
 
         <!-- Genre Buttons -->
-        <ScrollView Grid.Row="1" Orientation="Horizontal" Margin="10,0,10,10" IsVisible="{Binding IsGenrePickerVisible}">
-            <CollectionView ItemsSource="{Binding Genres}" ItemsLayout="HorizontalList" SelectionMode="None">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Button Text="{Binding .}"
-                                Command="{Binding Path=BindingContext.SelectGenreCommand, Source={x:Reference AddMoviePageRoot}}"
-                                CommandParameter="{Binding .}"
-                                BackgroundColor="#1F2A38"
-                                TextColor="White"
-                                Padding="10"
-                                CornerRadius="20"/>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </ScrollView>
+        <CollectionView Grid.Row="1"
+                ItemsSource="{Binding Genres}"
+                ItemsLayout="HorizontalList"
+                SelectionMode="None"
+                Margin="10,0,10,10">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Button Text="{Binding .}"
+                    Command="{Binding Path=BindingContext.SelectGenreCommand, Source={x:Reference AddMoviePageRoot}}"
+                    CommandParameter="{Binding .}"
+                    BackgroundColor="#1F2A38"
+                    TextColor="White"
+                    Padding="10"
+                    CornerRadius="20"/>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
-        <!-- Status Filter Buttons -->
+
+        <!-- Status Filter Buttons --><!--
         <Grid Grid.Row="2" ColumnDefinitions="*,*" Margin="10,0,10,10" ColumnSpacing="10">
             <Button Grid.Column="0"
                     Text="Show In Progress"
@@ -60,29 +64,71 @@
                     Padding="5"
                     CornerRadius="5"
                     HorizontalOptions="FillAndExpand"/>
-        </Grid>
+        </Grid>-->
 
-        <!-- Movie Collection -->
-        <CollectionView Grid.Row="3"
-                    ItemsSource="{Binding FilteredMovies}">
+        <!-- Movie Cards -->
+        <CollectionView Grid.Row="5" ItemsSource="{Binding FilteredMovies}">
+            <CollectionView.EmptyView>
+                <Label Text="No movies in your watchlist yet!"
+                TextColor="#CCCCCC"
+                FontSize="18"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand" />
+            </CollectionView.EmptyView>
+
             <CollectionView.ItemsLayout>
                 <GridItemsLayout Orientation="Vertical" Span="2" />
             </CollectionView.ItemsLayout>
+
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Border BackgroundColor="#1F2A38" StrokeShape="RoundRectangle" StrokeThickness="1" Margin="15,5" Padding="10">
-                        <VerticalStackLayout Spacing="10" Padding="10">
-                            <Image Source="{Binding CoverPhoto}"   
-                               HeightRequest="150"   
-                               Aspect="AspectFill"   
-                               HorizontalOptions="Center" />
-                            <Label Text="{Binding Title}"   
-                               FontSize="18"   
-                               FontAttributes="Bold"   
-                               TextColor="White"   
-                               HorizontalOptions="Center" />
-                        </VerticalStackLayout>
-                    </Border>
+                    <Frame BackgroundColor="#20262c"
+                    CornerRadius="1"
+                    HasShadow="True"
+                    Margin="6"
+                    Padding="0">
+                        <Frame.Shadow>
+                            <Shadow Offset="0,4"
+                             Radius="6"
+                             Opacity="0.5"/>
+                        </Frame.Shadow>
+
+                        <!-- Content inside the frame -->
+                        <Grid RowDefinitions="Auto,Auto,Auto" Padding="10">
+                            <Image Source="{Binding CoverPhoto}"
+                            HeightRequest="250"
+                            Aspect="AspectFill"
+                            HorizontalOptions="Fill"
+                            Grid.Row="0"
+                            Margin="0,0,0,8" />
+
+                            <Label Text="{Binding Title}"
+                            FontSize="18"
+                            FontAttributes="Bold"
+                            TextColor="White"
+                            HorizontalOptions="Center"
+                            Grid.Row="1"
+                            Margin="0,0,0,6" />
+
+                            <HorizontalStackLayout Grid.Row="2"
+                                            Spacing="8"
+                                            HorizontalOptions="Center">
+                                <Label Text="{Binding Year}" TextColor="#B0B0B0" FontSize="14" />
+                                <Label Text="·" TextColor="#B0B0B0" FontSize="14" />
+                                <Label Text="{Binding Genre}" TextColor="#B0B0B0" FontSize="14" />
+                                <Label Text="·" TextColor="#B0B0B0" FontSize="14" />
+                                <Label Text="Rating" TextColor="#B0B0B0" FontSize="14" />
+                                <Label Text="★" TextColor="#FFD700" FontSize="16" />
+                                <Label Text="{Binding Rating}" TextColor="#FFD700" FontSize="14" />
+                            </HorizontalStackLayout>
+                        </Grid>
+
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer
+                         Command="{Binding BindingContext.ShowMovieDetailsCommand, Source={x:Reference HomePageRoot}}"
+                         CommandParameter="{Binding .}" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
