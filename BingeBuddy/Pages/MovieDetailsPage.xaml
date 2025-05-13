@@ -3,7 +3,6 @@
              x:Class="BingeBuddy.Pages.MovieDetailsPage"
              BackgroundColor="#2C3E50"
              Title="Movie Details">
-    
 
     <ScrollView>
         <VerticalStackLayout Spacing="20" Padding="20">
@@ -20,26 +19,53 @@
             <Label Text="Your Rating:" FontSize="18" TextColor="White" Margin="0,20,0,0"/>
             <HorizontalStackLayout Spacing="8">
                 <Button Text="★" FontSize="28" 
-            Command="{Binding RateCommand}" CommandParameter="1"
-            TextColor="{Binding Rating, Converter={StaticResource StarColorConverter}, ConverterParameter=1}"
-            BackgroundColor="Transparent"/>
+                        Command="{Binding RateCommand}" CommandParameter="1"
+                        TextColor="{Binding Rating, Converter={StaticResource StarColorConverter}, ConverterParameter=1}"
+                        BackgroundColor="Transparent"/>
                 <Button Text="★" FontSize="28" 
-            Command="{Binding RateCommand}" CommandParameter="2"
-            TextColor="{Binding Rating, Converter={StaticResource StarColorConverter}, ConverterParameter=2}"
-            BackgroundColor="Transparent"/>
+                        Command="{Binding RateCommand}" CommandParameter="2"
+                        TextColor="{Binding Rating, Converter={StaticResource StarColorConverter}, ConverterParameter=2}"
+                        BackgroundColor="Transparent"/>
                 <Button Text="★" FontSize="28" 
-            Command="{Binding RateCommand}" CommandParameter="3"
-            TextColor="{Binding Rating, Converter={StaticResource StarColorConverter}, ConverterParameter=3}"
-            BackgroundColor="Transparent"/>
+                        Command="{Binding RateCommand}" CommandParameter="3"
+                        TextColor="{Binding Rating, Converter={StaticResource StarColorConverter}, ConverterParameter=3}"
+                        BackgroundColor="Transparent"/>
                 <Button Text="★" FontSize="28" 
-            Command="{Binding RateCommand}" CommandParameter="4"
-            TextColor="{Binding Rating, Converter={StaticResource StarColorConverter}, ConverterParameter=4}"
-            BackgroundColor="Transparent"/>
+                        Command="{Binding RateCommand}" CommandParameter="4"
+                        TextColor="{Binding Rating, Converter={StaticResource StarColorConverter}, ConverterParameter=4}"
+                        BackgroundColor="Transparent"/>
                 <Button Text="★" FontSize="28" 
-            Command="{Binding RateCommand}" CommandParameter="5"
-            TextColor="{Binding Rating, Converter={StaticResource StarColorConverter}, ConverterParameter=5}"
-            BackgroundColor="Transparent"/>
+                        Command="{Binding RateCommand}" CommandParameter="5"
+                        TextColor="{Binding Rating, Converter={StaticResource StarColorConverter}, ConverterParameter=5}"
+                        BackgroundColor="Transparent"/>
             </HorizontalStackLayout>
+
+            <!-- Tracker Section for Season, Episode, and Part -->
+            <Label Text="Track Progress:" FontSize="18" TextColor="White" Margin="0,20,0,0"/>
+
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <!-- Season Tracker -->
+                <Label Text="Season:" TextColor="White"/>
+                <Entry Text="{Binding Season}" Keyboard="Numeric" TextColor="White" BackgroundColor="#34495E" WidthRequest="60"/>
+                
+                <!-- Episode Tracker -->
+                <Label Text="Episode:" TextColor="White"/>
+                <Entry Text="{Binding Episode}" Keyboard="Numeric" TextColor="White" BackgroundColor="#34495E" WidthRequest="60"/>
+                
+                <!-- Part Tracker -->
+                <Label Text="Part:" TextColor="White"/>
+                <Entry Text="{Binding Part}" Keyboard="Numeric" TextColor="White" BackgroundColor="#34495E" WidthRequest="60"/>
+            </HorizontalStackLayout>
+
+            <!-- Update Tracker Button -->
+            <Button Text="Update Tracker" 
+                    Command="{Binding UpdateTrackerCommand}" 
+                    BackgroundColor="#2980B9" 
+                    TextColor="White" 
+                    CornerRadius="10"
+                    Margin="0,20,0,0"/>
+
         </VerticalStackLayout>
     </ScrollView>
+
 </ContentPage>

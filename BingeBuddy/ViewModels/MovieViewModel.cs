@@ -38,6 +38,21 @@ namespace BingeBuddy.ViewModels
                 }
             }
         }
+        public ObservableCollection<string> SortOptions { get; } = new() { "Title", "Rating" };
+        private string selectedSortOption;
+        public string SelectedSortOption
+        {
+            get => selectedSortOption;
+            set
+            {
+                if (selectedSortOption != value)
+                {
+                    selectedSortOption = value;
+                    OnPropertyChanged();
+                    FilterMovies(); // Re-filter and sort when changed
+                }
+            }
+        }
 
         public ICommand ShowCompletedCommand { get; }
         public ICommand ShowInProgressCommand { get; }
@@ -136,6 +151,7 @@ namespace BingeBuddy.ViewModels
             SelectedGenre = "All";
             FilterMovies();
         }
+
 
         private void OnGenreSelected(string genre)
         {

@@ -5,6 +5,9 @@ namespace BingeBuddy.Models
 {
     public class Movie : INotifyPropertyChanged
     {
+        private int _season;
+        private int _episode;
+        private int _part;
         public string Title { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
         public string Category { get; set; } = "Progress";
@@ -22,6 +25,44 @@ namespace BingeBuddy.Models
                 {
                     rating = value;
                     OnPropertyChanged();
+                }
+            }
+        }
+        public int Season
+        {
+            get => _season;
+            set
+            {
+                if (_season != value)
+                {
+                    _season = value;
+                    OnPropertyChanged(nameof(Season));
+                }
+            }
+        }
+
+        public int Episode
+        {
+            get => _episode;
+            set
+            {
+                if (_episode != value)
+                {
+                    _episode = value;
+                    OnPropertyChanged(nameof(Episode));
+                }
+            }
+        }
+
+        public int Part
+        {
+            get => _part;
+            set
+            {
+                if (_part != value)
+                {
+                    _part = value;
+                    OnPropertyChanged(nameof(Part));
                 }
             }
         }
