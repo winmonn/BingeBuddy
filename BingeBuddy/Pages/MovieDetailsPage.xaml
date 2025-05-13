@@ -44,17 +44,14 @@
             <Label Text="Track Progress:" FontSize="18" TextColor="White" Margin="0,20,0,0"/>
 
             <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
-                <!-- Season Tracker -->
                 <Label Text="Season:" TextColor="White"/>
-                <Entry Text="{Binding Season}" Keyboard="Numeric" TextColor="White" BackgroundColor="#34495E" WidthRequest="60"/>
-                
-                <!-- Episode Tracker -->
+                <Entry Text="{Binding Season, Mode=TwoWay}" Keyboard="Numeric" TextColor="White" BackgroundColor="#22313A"/>
+
                 <Label Text="Episode:" TextColor="White"/>
-                <Entry Text="{Binding Episode}" Keyboard="Numeric" TextColor="White" BackgroundColor="#34495E" WidthRequest="60"/>
-                
-                <!-- Part Tracker -->
+                <Entry Text="{Binding Episode, Mode=TwoWay}" Keyboard="Numeric" TextColor="White" BackgroundColor="#22313A"/>
+
                 <Label Text="Part:" TextColor="White"/>
-                <Entry Text="{Binding Part}" Keyboard="Numeric" TextColor="White" BackgroundColor="#34495E" WidthRequest="60"/>
+                <Entry Text="{Binding Part, Mode=TwoWay}" Keyboard="Numeric" TextColor="White" BackgroundColor="#22313A"/>
             </HorizontalStackLayout>
 
             <!-- Update Tracker Button -->

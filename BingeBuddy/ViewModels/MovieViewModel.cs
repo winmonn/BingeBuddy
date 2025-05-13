@@ -38,7 +38,9 @@ namespace BingeBuddy.ViewModels
                 }
             }
         }
+
         public ObservableCollection<string> SortOptions { get; } = new() { "Title", "Rating" };
+
         private string selectedSortOption;
         public string SelectedSortOption
         {
@@ -107,6 +109,63 @@ namespace BingeBuddy.ViewModels
             }
         }
 
+        // Add these properties to MovieViewModel if you want to edit the selected movie's season/episode/part
+        private Movie selectedMovie;
+        public Movie SelectedMovie
+        {
+            get => selectedMovie;
+            set
+            {
+                if (selectedMovie != value)
+                {
+                    selectedMovie = value;
+                    OnPropertyChanged();
+                    OnPropertyChanged(nameof(Season));
+                    OnPropertyChanged(nameof(Episode));
+                    OnPropertyChanged(nameof(Part));
+                }
+            }
+        }
+
+        public int Season
+        {
+            get => SelectedMovie?.Season ?? 0;
+            set
+            {
+                if (SelectedMovie != null && SelectedMovie.Season != value)
+                {
+                    SelectedMovie.UpdateSeason(value);
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public int Episode
+        {
+            get => SelectedMovie?.Episode ?? 0;
+            set
+            {
+                if (SelectedMovie != null && SelectedMovie.Episode != value)
+                {
+                    SelectedMovie.UpdateEpisode(value);
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public int Part
+        {
+            get => SelectedMovie?.Part ?? 0;
+            set
+            {
+                if (SelectedMovie != null && SelectedMovie.Part != value)
+                {
+                    SelectedMovie.UpdatePart(value);
+                    OnPropertyChanged();
+                }
+            }
+        }
+
         public MovieViewModel()
         {
             MoviesInProgress = new ObservableCollection<Movie>
@@ -151,7 +210,6 @@ namespace BingeBuddy.ViewModels
             SelectedGenre = "All";
             FilterMovies();
         }
-
 
         private void OnGenreSelected(string genre)
         {

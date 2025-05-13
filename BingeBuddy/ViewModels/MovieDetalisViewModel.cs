@@ -25,48 +25,23 @@ namespace BingeBuddy.ViewModels
             }
         }
 
-        // Tracker for current season, episode, and part
-        private int _season;
+
         public int Season
         {
-            get => _season;
-            set
-            {
-                if (_season != value)
-                {
-                    _season = value;
-                    OnPropertyChanged(nameof(Season));
-                }
-            }
+            get => Movie.Season;
+            set { if (Movie.Season != value) { Movie.UpdateSeason(value); OnPropertyChanged(nameof(Season)); } }
         }
-
-        private int _episode;
         public int Episode
         {
-            get => _episode;
-            set
-            {
-                if (_episode != value)
-                {
-                    _episode = value;
-                    OnPropertyChanged(nameof(Episode));
-                }
-            }
+            get => Movie.Episode;
+            set { if (Movie.Episode != value) { Movie.UpdateEpisode(value); OnPropertyChanged(nameof(Episode)); } }
         }
-
-        private int _part;
         public int Part
         {
-            get => _part;
-            set
-            {
-                if (_part != value)
-                {
-                    _part = value;
-                    OnPropertyChanged(nameof(Part));
-                }
-            }
+            get => Movie.Part;
+            set { if (Movie.Part != value) { Movie.UpdatePart(value); OnPropertyChanged(nameof(Part)); } }
         }
+
 
         public ICommand RateCommand { get; }
         public ICommand UpdateTrackerCommand { get; }

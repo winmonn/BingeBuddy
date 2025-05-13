@@ -75,8 +75,30 @@ namespace BingeBuddy.Models
                 Rating = newRating;
             }
         }
+        public void UpdateSeason(int newseason)
+        {
+            if (Season != newseason)
+            {
+                Season = newseason;
+            }
+        }
+        public void UpdateEpisode(int newepisode)
+        {
+            if (Episode != newepisode)
+            {
+                Episode = newepisode;
+            }
+        }
+        public void UpdatePart(int newpart)
+        {
+            if (Part != newpart)
+            {
+                Part = newpart;
+            }
+        }
 
-        public Movie(string title, string coverPhoto, string description = "", string genre = "", string category = "Progress", bool watched = false, int rating = 0)
+
+        public Movie(string title, string coverPhoto, string description = "", string genre = "", string category = "Progress", bool watched = false, int rating = 0, int season=0,int episode=0, int part=0 )
         {
             Title = title;
             CoverPhoto = coverPhoto;
@@ -85,6 +107,9 @@ namespace BingeBuddy.Models
             Category = category;
             Watched = watched;
             Rating = rating;
+            Season = season;
+            Episode = episode;
+            Part = part;
         }
 
         public override string ToString()
