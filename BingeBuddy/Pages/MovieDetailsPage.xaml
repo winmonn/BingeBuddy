@@ -1,17 +1,16 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BingeBuddy.Pages.MovieDetailsPage"
-             BackgroundColor="#2C3E50"
+             BackgroundColor="#0b0c0e"
              Title="Movie Details">
 
     <ScrollView>
         <VerticalStackLayout Spacing="24" Padding="20">
 
             <!-- Movie Cover Image -->
-            <Frame CornerRadius="20" HasShadow="True" Padding="0" BackgroundColor="#1F2A38"
-                   BorderColor="#34495E">
+            <Frame HasShadow="True" Padding="0" BackgroundColor="#1F2A38" BorderColor="#34495E" CornerRadius="1">
                 <Image Source="{Binding CoverPhoto}"
-                       HeightRequest="220"
+                       HeightRequest="300"
                        Aspect="AspectFill"
                        HorizontalOptions="Fill"
                        VerticalOptions="Fill"/>
@@ -28,9 +27,15 @@
 
             <!-- Genre Tags -->
             <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
-                <Label Text="Action" BackgroundColor="#3E556E" TextColor="White" Padding="12,6"  />
-                <Label Text="Adventure" BackgroundColor="#3E556E" TextColor="White" Padding="12,6"  />
-                <Label Text="Sci-Fi" BackgroundColor="#3E556E" TextColor="White" Padding="12,6"  />
+                <Frame CornerRadius="16" Padding="0" BackgroundColor="#3E556E" HasShadow="False">
+                    <Label Text="Action" TextColor="White" Padding="12,6"/>
+                </Frame>
+                <Frame CornerRadius="16" Padding="0" BackgroundColor="#3E556E" HasShadow="False">
+                    <Label Text="Adventure" TextColor="White" Padding="12,6"/>
+                </Frame>
+                <Frame CornerRadius="16" Padding="0" BackgroundColor="#3E556E" HasShadow="False">
+                    <Label Text="Sci-Fi" TextColor="White" Padding="12,6"/>
+                </Frame>
             </HorizontalStackLayout>
 
             <!-- Movie Description -->
@@ -92,35 +97,52 @@
 
             <Frame BackgroundColor="#1F2A38" Padding="15" CornerRadius="15" HasShadow="True">
                 <HorizontalStackLayout Spacing="20" HorizontalOptions="Center">
+
+                    <!-- Season Entry -->
                     <VerticalStackLayout Spacing="5">
                         <Label Text="Season:" TextColor="White" FontSize="14"/>
-                        <Entry Text="{Binding Season, Mode=TwoWay}"
-                               Keyboard="Numeric"
-                               TextColor="White"
-                               BackgroundColor="#22313A"
-                               WidthRequest="70"
-                               />
+                        <Frame CornerRadius="10" Padding="0" BackgroundColor="Transparent" BorderColor="#34495E" HasShadow="True" WidthRequest="70" HeightRequest="40">
+                            <Entry Text="{Binding Season, Mode=TwoWay}"
+                                   Keyboard="Numeric"
+                                   TextColor="White"
+                                   BackgroundColor="#22313A"
+                                   FontSize="14"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="FillAndExpand"
+                                   Margin="5,0"/>
+                        </Frame>
                     </VerticalStackLayout>
 
+                    <!-- Episode Entry -->
                     <VerticalStackLayout Spacing="5">
                         <Label Text="Episode:" TextColor="White" FontSize="14"/>
-                        <Entry Text="{Binding Episode, Mode=TwoWay}"
-                               Keyboard="Numeric"
-                               TextColor="White"
-                               BackgroundColor="#22313A"
-                               WidthRequest="70"
-                               />
+                        <Frame CornerRadius="10" Padding="0" BackgroundColor="Transparent" BorderColor="#34495E" HasShadow="True" WidthRequest="70" HeightRequest="40">
+                            <Entry Text="{Binding Episode, Mode=TwoWay}"
+                                   Keyboard="Numeric"
+                                   TextColor="White"
+                                   BackgroundColor="#22313A"
+                                   FontSize="14"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="FillAndExpand"
+                                   Margin="5,0"/>
+                        </Frame>
                     </VerticalStackLayout>
 
+                    <!-- Part Entry -->
                     <VerticalStackLayout Spacing="5">
                         <Label Text="Part:" TextColor="White" FontSize="14"/>
-                        <Entry Text="{Binding Part, Mode=TwoWay}"
-                               Keyboard="Numeric"
-                               TextColor="White"
-                               BackgroundColor="#22313A"
-                               WidthRequest="70"
-                               />
+                        <Frame CornerRadius="10" Padding="0" BackgroundColor="Transparent" BorderColor="#34495E" HasShadow="True" WidthRequest="70" HeightRequest="40">
+                            <Entry Text="{Binding Part, Mode=TwoWay}"
+                                   Keyboard="Numeric"
+                                   TextColor="White"
+                                   BackgroundColor="#22313A"
+                                   FontSize="14"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="FillAndExpand"
+                                   Margin="5,0"/>
+                        </Frame>
                     </VerticalStackLayout>
+
                 </HorizontalStackLayout>
             </Frame>
 
@@ -144,6 +166,7 @@
                     FontSize="16"
                     FontAttributes="Bold"
                     HeightRequest="50"/>
+
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
