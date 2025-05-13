@@ -4,20 +4,25 @@ using System.Text.Json;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Threading.Tasks;
+using Microsoft.Maui.Controls.Shapes;
 
 namespace BingeBuddy.Pages;
 
 public partial class ProfilePage : ContentPage
 {
     private ObservableCollection<UserList> userLists = new();
-    private readonly string listsFilePath = Path.Combine(FileSystem.AppDataDirectory, "userLists.json");
+    private ObservableCollection<string> watchLaterMovies = new(); // Watch Later list
+
+    private readonly string listsFilePath = System.IO.Path.Combine(FileSystem.AppDataDirectory, "userLists.json");
+    private readonly string watchLaterFilePath = System.IO.Path.Combine(FileSystem.AppDataDirectory, "watchLater.json");
 
     public ProfilePage()
     {
         InitializeComponent();
         BindingContext = new MovieViewModel();
-        LoadUserLists(); // Load lists from local storage
-        ShowActivityTab(); // Default tab
+        LoadUserLists();
+        LoadWatchLater();
+        ShowActivityTab();
     }
 
     private void OnTabClicked(object sender, EventArgs e)
@@ -26,25 +31,17 @@ public partial class ProfilePage : ContentPage
         {
             switch (button.StyleId)
             {
-                case "ActivityTab":
-                    ShowActivityTab();
-                    break;
-                case "ListsTab":
-                    ShowListsTab();
-                    break;
-                case "FilmsTab":
-                    ShowFilmsTab();
-                    break;
-                case "WatchLaterTab":
-                    ShowWatchLaterTab();
-                    break;
+                case "ActivityTab": ShowActivityTab(); break;
+                case "ListsTab": ShowListsTab(); break;
+                case "FilmsTab": ShowFilmsTab(); break;
+                case "WatchLaterTab": ShowWatchLaterTab(); break;
             }
         }
     }
 
-    // =========================
+    // ----------------------------
     // Activity Tab
-    // =========================
+    // ----------------------------
 
     private void ShowActivityTab()
     {
@@ -54,7 +51,6 @@ public partial class ProfilePage : ContentPage
             Children =
             {
                 new Label { Text = "Recent Reviews", FontSize = 16, FontAttributes = FontAttributes.Bold },
-
                 new Frame
                 {
                     CornerRadius = 12,
@@ -71,28 +67,25 @@ public partial class ProfilePage : ContentPage
                             new Label
                             {
                                 Text = "\"A cinematic masterpiece with breathtaking visuals and thought-provoking AI narrative.\"",
-                                FontSize = 13,
-                                TextColor = Colors.Black
+                                FontSize = 13
                             }
                         }
                     }
                 },
-
-                new Label { Text = "Recent Lists", FontSize = 16, FontAttributes = FontAttributes.Bold, Margin = new Thickness(0, 10, 0, 0) },
-
+                new Label { Text = "Recent Lists", FontSize = 16, FontAttributes = FontAttributes.Bold, Margin = new Thickness(0,10,0,0) },
                 new Label { Text = "• BEST OF 2024 (SO FARR) – 18 films", FontSize = 13 },
                 new Label { Text = "• Must-Watch Dramas – 42 films", FontSize = 13 }
             }
         };
     }
 
-    // =========================
+    // ----------------------------
     // Lists Tab
-    // =========================
+    // ----------------------------
 
     private void ShowListsTab()
     {
-        var stack = new VerticalStackLayout { Padding = new Thickness(10), Spacing = 10 };
+        var stack = new VerticalStackLayout { Padding = 10, Spacing = 10 };
 
         var addButton = new Button
         {
@@ -216,9 +209,9 @@ public partial class ProfilePage : ContentPage
         }
     }
 
-    // =========================
+    // ----------------------------
     // Films Tab
-    // =========================
+    // ----------------------------
 
     private void ShowFilmsTab()
     {
@@ -265,27 +258,13 @@ public partial class ProfilePage : ContentPage
                     ColumnSpacing = 10
                 };
 
-                var poster = new Image
-                {
-                    HeightRequest = 60,
-                    WidthRequest = 40,
-                    Aspect = Aspect.AspectFill
-                };
+                var poster = new Image { HeightRequest = 60, WidthRequest = 40, Aspect = Aspect.AspectFill };
                 poster.SetBinding(Image.SourceProperty, "Poster");
 
-                var titleLabel = new Label
-                {
-                    FontSize = 16,
-                    FontAttributes = FontAttributes.Bold,
-                    TextColor = Color.FromArgb("#333")
-                };
+                var titleLabel = new Label { FontSize = 16, FontAttributes = FontAttributes.Bold, TextColor = Color.FromArgb("#333") };
                 titleLabel.SetBinding(Label.TextProperty, "Title");
 
-                var genreLabel = new Label
-                {
-                    FontSize = 13,
-                    TextColor = Color.FromArgb("#666")
-                };
+                var genreLabel = new Label { FontSize = 13, TextColor = Color.FromArgb("#666") };
                 genreLabel.SetBinding(Label.TextProperty, "Genre");
 
                 var ratingLabel = new Label
@@ -309,25 +288,102 @@ public partial class ProfilePage : ContentPage
         };
     }
 
-    // =========================
+    // ----------------------------
     // Watch Later Tab
-    // =========================
+    // ----------------------------
 
     private void ShowWatchLaterTab()
     {
-        TabContent.Content = new VerticalStackLayout
+        var stack = new VerticalStackLayout { Padding = 10, Spacing = 10 };
+
+        var addButton = new Button
         {
-            Children =
+            Text = "➕ Add to Watch Later",
+            BackgroundColor = Colors.LightGray,
+            TextColor = Colors.Black,
+            CornerRadius = 12,
+            FontAttributes = FontAttributes.Bold
+        };
+        addButton.Clicked += async (s, e) =>
+        {
+            string title = await DisplayPromptAsync("Watch Later", "Enter movie title to add:");
+            if (!string.IsNullOrWhiteSpace(title))
             {
-                new Label { Text = "Watch Later items listed here...", FontSize = 14 }
+                watchLaterMovies.Insert(0, title);
+                await SaveWatchLaterAsync();
+                ShowWatchLaterTab();
             }
         };
+        stack.Children.Add(addButton);
+
+        foreach (var movie in watchLaterMovies)
+        {
+            var row = new HorizontalStackLayout
+            {
+                Spacing = 10,
+                Children =
+                {
+                    new Label { Text = "• " + movie, FontSize = 14, VerticalOptions = LayoutOptions.Center },
+                    new Button
+                    {
+                        Text = "❌",
+                        FontSize = 12,
+                        BackgroundColor = Colors.Transparent,
+                        TextColor = Colors.Red,
+                        Command = new Command(async () =>
+                        {
+                            bool confirm = await DisplayAlert("Remove", $"Remove '{movie}' from Watch Later?", "Yes", "Cancel");
+                            if (confirm)
+                            {
+                                watchLaterMovies.Remove(movie);
+                                await SaveWatchLaterAsync();
+                                ShowWatchLaterTab();
+                            }
+                        })
+                    }
+                }
+            };
+            stack.Children.Add(row);
+        }
+
+        TabContent.Content = new ScrollView { Content = stack };
+    }
+
+    private async Task SaveWatchLaterAsync()
+    {
+        try
+        {
+            var json = JsonSerializer.Serialize(watchLaterMovies);
+            await File.WriteAllTextAsync(watchLaterFilePath, json);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error saving Watch Later: " + ex.Message);
+        }
+    }
+
+    private void LoadWatchLater()
+    {
+        try
+        {
+            if (File.Exists(watchLaterFilePath))
+            {
+                var json = File.ReadAllText(watchLaterFilePath);
+                var loaded = JsonSerializer.Deserialize<ObservableCollection<string>>(json);
+                if (loaded != null)
+                    watchLaterMovies = loaded;
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error loading Watch Later: " + ex.Message);
+        }
     }
 }
 
-// =========================
+// ----------------------------
 // UserList model
-// =========================
+// ----------------------------
 
 public class UserList
 {
