@@ -35,6 +35,7 @@ namespace BingeBuddy.ViewModels
                     OnPropertyChanged(nameof(InProgressTextColor));
                     OnPropertyChanged(nameof(CompletedTextColor));
                     FilterMovies();
+                    OnPropertyChanged(nameof(FilteredMoviesInList));
                 }
             }
         }
@@ -52,6 +53,7 @@ namespace BingeBuddy.ViewModels
                     selectedSortOption = value;
                     OnPropertyChanged();
                     FilterMovies(); // Re-filter and sort when changed
+                    OnPropertyChanged(nameof(FilteredMoviesInList));
                 }
             }
         }
@@ -79,6 +81,7 @@ namespace BingeBuddy.ViewModels
                     selectedGenre = value;
                     OnPropertyChanged();
                     FilterMovies();
+                    OnPropertyChanged(nameof(FilteredMoviesInList));
                 }
             }
         }
@@ -94,6 +97,7 @@ namespace BingeBuddy.ViewModels
                     searchText = value;
                     OnPropertyChanged();
                     FilterMovies();
+                    OnPropertyChanged(nameof(FilteredMoviesInList));
                 }
             }
         }
@@ -106,6 +110,30 @@ namespace BingeBuddy.ViewModels
             {
                 filteredMovies = value;
                 OnPropertyChanged();
+            }
+        }
+
+        public ObservableCollection<Movie> FilteredMoviesInList
+        {
+            get
+            {
+                IEnumerable<Movie> filtered = MoviesInProgress.Where(m => m.InList);
+
+                if (!string.IsNullOrWhiteSpace(SearchText))
+                    filtered = filtered.Where(m => m.Title.Contains(SearchText, System.StringComparison.OrdinalIgnoreCase));
+
+                if (!string.IsNullOrWhiteSpace(SelectedGenre) && SelectedGenre != "All")
+                    filtered = filtered.Where(m => m.Genre == SelectedGenre);
+
+                if (!string.IsNullOrWhiteSpace(StatusFilter) && StatusFilter != "All")
+                    filtered = filtered.Where(m => m.Category == StatusFilter);
+
+                if (SelectedSortOption == "Title")
+                    filtered = filtered.OrderBy(m => m.Title);
+                else if (SelectedSortOption == "Rating")
+                    filtered = filtered.OrderByDescending(m => m.Rating);
+
+                return new ObservableCollection<Movie>(filtered);
             }
         }
 
@@ -222,6 +250,7 @@ namespace BingeBuddy.ViewModels
             SelectedGenre = genre;
         }
 
+
         private void FilterMovies(bool onlyInList = false)
         {
             var filtered = MoviesInProgress.AsEnumerable();
@@ -237,6 +266,11 @@ namespace BingeBuddy.ViewModels
 
             if (!string.IsNullOrWhiteSpace(StatusFilter) && StatusFilter != "All")
                 filtered = filtered.Where(m => m.Category == StatusFilter);
+
+            if (SelectedSortOption == "Title")
+                filtered = filtered.OrderBy(m => m.Title);
+            else if (SelectedSortOption == "Rating")
+                filtered = filtered.OrderByDescending(m => m.Rating);
 
             FilteredMovies.Clear();
             foreach (var movie in filtered)

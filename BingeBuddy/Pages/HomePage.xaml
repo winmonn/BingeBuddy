@@ -163,7 +163,7 @@
             </Grid>
 
             <!-- Movie Cards -->
-            <CollectionView Grid.Row="5" ItemsSource="{Binding MoviesInList}">
+            <CollectionView Grid.Row="5" ItemsSource="{Binding FilteredMoviesInList}">
                 <CollectionView.EmptyView>
                     <Label Text="No movies in your watchlist yet!"
                            TextColor="#CCCCCC"
