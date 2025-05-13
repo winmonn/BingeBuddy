@@ -6,12 +6,12 @@
              x:Class="BingeBuddy.App">
     <Application.Resources>
         <ResourceDictionary>
+            <converters:InListToBookmarkImageConverter x:Key="InListToBookmarkImageConverter" />
             <local:StarColorConverter x:Key="StarColorConverter"/>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
-            <converters:InListToBookmarkImageConverter x:Key="InListToBookmarkImageConverter" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>

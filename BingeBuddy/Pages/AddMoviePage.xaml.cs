@@ -5,10 +5,10 @@ namespace BingeBuddy.Pages
 {
     public partial class AddMoviePage : ContentPage
     {
-        public AddMoviePage()
+        public AddMoviePage(MovieViewModel viewModel)
         {
             InitializeComponent();
-            BindingContext = new MovieViewModel();
+            BindingContext = viewModel;
         }
     }
 }
