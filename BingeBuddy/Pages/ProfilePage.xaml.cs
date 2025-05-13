@@ -1,5 +1,4 @@
 using Microsoft.Maui.Controls;
-using Microsoft.Maui.Controls.Shapes;
 using BingeBuddy.ViewModels;
 using System.Text.Json;
 using System.Collections.ObjectModel;
