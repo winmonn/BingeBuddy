@@ -161,6 +161,16 @@
                          Padding="15"
                          BackgroundColor="White"/>
 
+            <!-- Logout Button -->
+            <Button Text="Logout"
+                    BackgroundColor="#E74C3C"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="10"
+                    Margin="20,30"
+                    Clicked="OnLogoutClicked"/>
+
+
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

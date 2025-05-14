@@ -379,6 +379,21 @@ public partial class ProfilePage : ContentPage
             Console.WriteLine("Error loading Watch Later: " + ex.Message);
         }
     }
+
+    private async void OnLogoutClicked(object sender, EventArgs e)
+    {
+        bool confirm = await DisplayAlert("Logout", "Are you sure you want to log out?", "Yes", "Cancel");
+        if (confirm)
+        {
+            // Clear stored preferences or session data if any
+            Preferences.Clear();
+
+            // Navigate back to login or welcome screen
+            Application.Current.MainPage = new NavigationPage(new LoginPage());
+            // Adjust the route name based on your Shell route
+        }
+    }
+
 }
 
 // ----------------------------
