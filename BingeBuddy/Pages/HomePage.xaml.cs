@@ -1,20 +1,32 @@
-using BingeBuddy.ViewModels;
+using BingeBuddy.Models;
 
-namespace BingeBuddy.Pages
+namespace BingeBuddy.Pages;
+
+public partial class HomePage : ContentPage
 {
-    public partial class HomePage : ContentPage
+    public HomePage()
     {
-        public HomePage(MovieViewModel viewModel)
-        {
-            InitializeComponent();
-            BindingContext = viewModel;
-        }
+        InitializeComponent();
+    }
 
-        // When the Profile button is clicked, navigate to the ProfilePage
-        private async void OnProfileButtonClicked(object sender, EventArgs e)
+    private void OnMovieCardTapped(object sender, TappedEventArgs e)
+    {
+        if (e.Parameter is Movie movie)
         {
-            // Navigate to the ProfilePage using Navigation.PushAsync
-            await Navigation.PushAsync(new ProfilePage());
+            PopupImage.Source = movie.CoverPhoto;
+            PopupTitle.Text = movie.Title;
+            PopupSynopsis.Text = movie.Description;
+            MoviePopup.IsVisible = true;
         }
+    }
+
+    private void ClosePopup_Clicked(object sender, EventArgs e)
+    {
+        MoviePopup.IsVisible = false;
+    }
+
+    private void OnPopupBackgroundTapped(object sender, TappedEventArgs e)
+    {
+        MoviePopup.IsVisible = false;
     }
 }

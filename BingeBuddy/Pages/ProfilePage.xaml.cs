@@ -153,6 +153,7 @@ public partial class ProfilePage : ContentPage
             userLists.Insert(0, new UserList { Title = title, FilmCount = 0 });
             await SaveUserListsAsync();
             ShowListsTab();
+            await DisplayAlert("Success", "List successfully added", "OK");
         }
     }
 
